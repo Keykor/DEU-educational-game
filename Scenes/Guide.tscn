@@ -28,8 +28,8 @@ margin_right = 976.0
 margin_bottom = 379.0
 size_flags_horizontal = 7
 custom_fonts/font = SubResource( 1 )
-text = "- APRETA LOS OBJETOS BOBO
-- PROBA PENSAR"
+text = "- Apreta los objetos
+- X"
 
 [node name="Back" type="Button" parent="."]
 margin_left = 453.0
