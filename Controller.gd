@@ -4,7 +4,7 @@ var active_scene
 
 func _ready():
 	$Timer.start()
-	active_scene = $Start
+	active_scene = $MainMenu
 	pass
 
 func _process(delta):
