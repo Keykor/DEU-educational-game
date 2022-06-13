@@ -53,5 +53,5 @@ margin_bottom = 440.0
 custom_fonts/font = SubResource( 2 )
 text = "Configuraciones"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]
+[connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed" binds= [ "GameKitchen" ]]
 [connection signal="pressed" from="GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
