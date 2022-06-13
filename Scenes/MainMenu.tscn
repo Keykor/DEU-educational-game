@@ -73,3 +73,4 @@ text = "Configuraciones"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_button_pressed" binds= [ "GameKitchen" ]]
 [connection signal="pressed" from="GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
+[connection signal="pressed" from="ConfigurationButton" to="." method="_on_button_pressed" binds= [ "Settings" ]]
