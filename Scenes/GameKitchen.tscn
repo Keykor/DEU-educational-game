@@ -21,8 +21,8 @@ text = "Estas en la cocina"
 
 [node name="Button" type="Button" parent="."]
 margin_left = 968.0
-margin_top = 259.0
+margin_top = 236.0
 margin_right = 994.0
-margin_bottom = 346.0
+margin_bottom = 323.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]

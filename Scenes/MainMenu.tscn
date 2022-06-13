@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Guide.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -10,6 +9,25 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -43,7 +61,7 @@ margin_right = 550.0
 margin_bottom = 368.0
 custom_fonts/font = SubResource( 2 )
 text = "Cómo jugar"
-script = ExtResource( 3 )
+script = SubResource( 3 )
 
 [node name="ConfigurationButton" type="Button" parent="."]
 margin_left = 440.0
