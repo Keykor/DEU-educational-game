@@ -1,10 +1,10 @@
 extends Node2D
 
-var active_scene
+onready var active_scene = $MainMenu
 
 func _ready():
 	$Timer.start()
-	active_scene = $MainMenu
+	active_scene.connect("change_scene", self, "_on_change_scene")
 	pass
 
 func _process(delta):
@@ -15,8 +15,9 @@ func _on_Timer_timeout():
 	pass
 
 func _on_change_scene(scene_name):
-	active_scene.queue_free()
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
 	add_child(next_scene)
+	next_scene.connect("change_scene", self, "_on_change_scene")
+	active_scene.queue_free()
 	active_scene = next_scene
 	pass
