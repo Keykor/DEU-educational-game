@@ -9,8 +9,15 @@ func _ready():
 func _process(delta):
 	pass
 
-func start_timer():
-	$Timer.start()
+func start_timer(time):
+	$Timer.start(time)
+	pass
+
+func get_actual_time():
+	return $Timer/Label.text
+
+func stop_timer():
+	$Timer.stop()
 	pass
 
 func _on_Timer_timeout():

@@ -24,5 +24,14 @@ margin_left = 968.0
 margin_top = 236.0
 margin_right = 994.0
 margin_bottom = 323.0
+text = ">"
+
+[node name="Pause" type="Button" parent="."]
+margin_left = 963.0
+margin_top = 15.0
+margin_right = 995.0
+margin_bottom = 41.0
+text = "||"
 
 [connection signal="pressed" from="NextRoomButton" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]
+[connection signal="pressed" from="Pause" to="." method="_on_button_pressed" binds= [ "GamePause" ]]
