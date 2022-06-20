@@ -47,6 +47,6 @@ margin_bottom = 460.0
 custom_fonts/font = SubResource( 2 )
 text = "Salir"
 
-[connection signal="pressed" from="Reanudar" to="." method="_on_button_pressed" binds= [ "GameKitchen" ]]
+[connection signal="pressed" from="Reanudar" to="." method="_on_reanudar_button_pressed" binds= [ "GameKitchen" ]]
 [connection signal="pressed" from="Configuracion" to="." method="_on_button_pressed" binds= [ "Settings" ]]
 [connection signal="pressed" from="Salir" to="." method="_on_button_pressed" binds= [ "MainMenu" ]]

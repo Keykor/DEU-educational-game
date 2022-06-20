@@ -9,16 +9,20 @@ func _ready():
 func _process(delta):
 	pass
 
-func start_timer(time):
-	$Timer.start(time)
-	pass
+func start_timer():
+	$Timer.start_game()
 
 func get_actual_time():
 	return $Timer/Label.text
 
 func stop_timer():
-	$Timer.stop()
-	pass
+	$Timer.end_game()
+
+func continue_timer():
+	$Timer.continue_game()
+	
+func pause_timer():
+	$Timer.pause_game()
 
 func _on_Timer_timeout():
 	var scene_name = "GameLose"
