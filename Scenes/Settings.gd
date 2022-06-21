@@ -15,6 +15,13 @@ func _on_button_pressed(scene_name):
 func set_dificultades():
 	var parent = get_tree().get_current_scene()
 	self.connect("change_dificultad", parent, "_on_change_dificultad")
+	var dificultad = parent.game_time
+	if (dificultad == 30.0):
+		$Panel/Dificultad/MenuButton.text = "Fácil"
+	elif (dificultad == 20.0):
+		$Panel/Dificultad/MenuButton.text = "Medio"
+	elif (dificultad == 10.0):
+		$Panel/Dificultad/MenuButton.text = "Difícil"
 	$Panel/Dificultad/MenuButton.get_popup().add_item("Fácil")
 	$Panel/Dificultad/MenuButton.get_popup().add_item("Medio")
 	$Panel/Dificultad/MenuButton.get_popup().add_item("Difícil")
@@ -26,9 +33,9 @@ func _on_dificultad_pressed(id):
 	var item_name = $Panel/Dificultad/MenuButton.get_popup().get_item_text(id)
 	if (item_name == "Fácil"):
 		dificultad = 30.0
-	if (item_name == "Medio"):
+	elif (item_name == "Medio"):
 		dificultad = 20.0
-	if (item_name == "Difícil"):
+	elif (item_name == "Difícil"):
 		dificultad = 10.0
 	$Panel/Dificultad/MenuButton.text = item_name
 	emit_signal("change_dificultad", dificultad)

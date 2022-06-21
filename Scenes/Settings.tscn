@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/Settings.gd" type="Script" id=2]
@@ -14,9 +14,6 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
 [node name="Settings" type="Node2D"]
@@ -64,19 +61,18 @@ margin_right = 737.0
 margin_bottom = 278.0
 
 [node name="Dificultad" type="Label" parent="Panel"]
-margin_left = 12.0
-margin_top = 8.0
-margin_right = 90.0
-margin_bottom = 31.0
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
 theme = ExtResource( 3 )
-custom_fonts/font = SubResource( 2 )
 text = "Dificultad:"
 
 [node name="MenuButton" type="MenuButton" parent="Panel/Dificultad"]
-margin_left = 375.0
-margin_top = 1.0
-margin_right = 416.0
-margin_bottom = 24.0
+margin_left = 366.0
+margin_top = -1.0
+margin_right = 411.0
+margin_bottom = 30.0
 theme = ExtResource( 3 )
 text = "Fácil"
 
