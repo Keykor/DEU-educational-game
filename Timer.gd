@@ -8,7 +8,7 @@ func _ready():
 	save_time_left = game_time
 
 func _process(delta):
-	find_node("Label").set_text(str(time_left))
+	find_node("Label").set_text(str(time_left).split(".")[0])
 
 func start_game():
 	start(game_time)
@@ -25,3 +25,11 @@ func end_game():
 
 func set_game_time(new_game_time):
 	game_time = new_game_time
+
+func hide():
+	$ColorRect.hide()
+	$Label.hide()
+	
+func show():
+	$ColorRect.show()
+	$Label.show()

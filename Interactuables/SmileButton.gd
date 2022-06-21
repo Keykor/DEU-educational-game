@@ -16,6 +16,6 @@ func save():
 		"parent": get_parent().get_path(),
 		"pos_x": rect_position.x,
 		"pos_y": rect_position.y,
-		"hidden": is_visible()
+		"is_visible": is_visible()
 	}
 	return save_dict

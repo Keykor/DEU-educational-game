@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/game_theme.tres" type="Theme" id=4]
 [ext_resource path="res://Scenes/Inventory.gd" type="Script" id=6]
 
 [node name="Controller" type="Node2D"]
@@ -14,10 +15,16 @@ script = ExtResource( 1 )
 wait_time = 30.0
 one_shot = true
 
-[node name="Inventory" type="HBoxContainer" parent="."]
+[node name="InventoryRect" type="ColorRect" parent="."]
 margin_top = 500.0
 margin_right = 1024.0
 margin_bottom = 600.0
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+
+[node name="Inventory" type="HBoxContainer" parent="InventoryRect"]
+margin_right = 1024.0
+margin_bottom = 100.0
+theme = ExtResource( 4 )
 script = ExtResource( 6 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

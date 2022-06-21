@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/game_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Assets/Backgrounds/MainMenu.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
+size = 73
+outline_size = 1
 font_data = ExtResource( 1 )
 
 [sub_resource type="GDScript" id=3]
@@ -33,42 +33,46 @@ func _ready():
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 1024.0
+margin_bottom = 598.0
+texture = ExtResource( 4 )
 expand = true
 
 [node name="Title" type="Label" parent="."]
-margin_left = 288.0
-margin_top = 96.0
-margin_right = 725.0
-margin_bottom = 181.0
+margin_left = 212.0
+margin_top = 144.0
+margin_right = 812.0
+margin_bottom = 257.0
 size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Título del juego"
+align = 1
+valign = 1
 
 [node name="PlayButton" type="Button" parent="."]
-margin_left = 464.0
-margin_top = 256.0
-margin_right = 541.0
-margin_bottom = 296.0
-custom_fonts/font = SubResource( 2 )
+margin_left = 412.0
+margin_top = 305.0
+margin_right = 612.0
+margin_bottom = 345.0
+theme = ExtResource( 3 )
 text = "Empezar"
 
 [node name="GuideButton" type="Button" parent="."]
-margin_left = 456.0
-margin_top = 328.0
-margin_right = 550.0
-margin_bottom = 368.0
-custom_fonts/font = SubResource( 2 )
+margin_left = 412.0
+margin_top = 355.0
+margin_right = 612.0
+margin_bottom = 395.0
+theme = ExtResource( 3 )
 text = "Cómo jugar"
 script = SubResource( 3 )
 
 [node name="ConfigurationButton" type="Button" parent="."]
-margin_left = 440.0
-margin_top = 400.0
-margin_right = 568.0
-margin_bottom = 440.0
-custom_fonts/font = SubResource( 2 )
+margin_left = 412.0
+margin_top = 405.0
+margin_right = 612.0
+margin_bottom = 445.0
+theme = ExtResource( 3 )
 text = "Configuraciones"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_start_button_pressed"]
