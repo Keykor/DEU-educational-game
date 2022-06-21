@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/GameKitchen.gd" type="Script" id=2]
+[ext_resource path="res://Interactuables/SmileButton.tscn" type="PackedScene" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -32,6 +33,18 @@ margin_top = 15.0
 margin_right = 995.0
 margin_bottom = 41.0
 text = "||"
+
+[node name="SmileButton" parent="." instance=ExtResource( 3 )]
+margin_left = 260.0
+margin_top = 268.0
+margin_right = 372.0
+margin_bottom = 374.0
+
+[node name="SmileButton2" parent="." instance=ExtResource( 3 )]
+margin_left = 590.0
+margin_top = 372.0
+margin_right = 702.0
+margin_bottom = 478.0
 
 [connection signal="pressed" from="NextRoomButton" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]
 [connection signal="pressed" from="Pause" to="." method="_on_button_pressed" binds= [ "GamePause" ]]

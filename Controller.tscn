@@ -15,10 +15,9 @@ wait_time = 30.0
 one_shot = true
 
 [node name="Inventory" type="HBoxContainer" parent="."]
-margin_left = 1.0
-margin_top = 499.0
+margin_top = 500.0
 margin_right = 1024.0
-margin_bottom = 599.0
+margin_bottom = 600.0
 script = ExtResource( 6 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
