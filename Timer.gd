@@ -4,7 +4,7 @@ var save_time_left
 var game_time
 
 func _ready():
-	game_time = 10.0
+	game_time = 30.0
 	save_time_left = game_time
 
 func _process(delta):
