@@ -1,19 +1,19 @@
 extends Node2D
 
 onready var active_scene = $MainMenu
-var game_time = 10.0
+var game_time = 30.0
 var aparato = false
 
 func _ready():
 	active_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.connect("save_item", self, "_on_save_item")
-	$Timer.set_game_time(game_time)
 	pass
 
 func _process(delta):
 	pass
 
 func start_timer():
+	$Timer.set_game_time(game_time)
 	$Timer.start_game()
 
 func get_actual_time():
@@ -65,3 +65,7 @@ func evaluation():
 	if (not $Inventory.have_five_smiles()):
 		text = text + "- No conseguiste 5 caras \n"
 	return text
+
+func _on_change_dificultad(dificultad):
+	print(dificultad)
+	game_time = dificultad
