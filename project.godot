@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "HBoxContainer",
+"class": "Smile",
+"language": "GDScript",
+"path": "res://Scenes/Inventory.gd"
+} ]
+_global_script_class_icons={
+"Smile": "res://Scenes/Items/Smile.tscn"
+}
+
 [application]
 
 config/name="DEU Educational Game"

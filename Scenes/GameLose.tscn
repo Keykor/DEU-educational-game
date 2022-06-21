@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/GameLose.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 23
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -29,9 +33,9 @@ margin_top = 217.0
 margin_right = 968.0
 margin_bottom = 425.0
 size_flags_horizontal = 7
-custom_fonts/font = SubResource( 1 )
-text = "- Falto bajar la termica. 
-Moriste electrocutado"
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 3 )
+text = "Razón generica de perder "
 align = 1
 
 [node name="Back" type="Button" parent="."]

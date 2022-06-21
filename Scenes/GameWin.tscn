@@ -20,7 +20,8 @@ margin_right = 916.0
 margin_bottom = 190.0
 size_flags_horizontal = 7
 custom_fonts/font = SubResource( 1 )
-text = "Ganaste tu casa esta a salvo"
+text = "Ganaste"
+align = 1
 
 [node name="Back" type="Button" parent="."]
 margin_left = 443.0
