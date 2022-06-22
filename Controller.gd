@@ -16,7 +16,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func start_timer():
+func start_game():
 	$InventoryRect.show()
 	$Timer.show()
 	$Timer.set_game_time(game_time)
@@ -25,19 +25,19 @@ func start_timer():
 func get_actual_time():
 	return $Timer/Label.text
 
-func stop_timer():
+func stop_game():
 	$InventoryRect.hide()
 	$Timer.hide()
 	$Timer.end_game()
 
-func continue_timer():
+func continue_game():
 	$Timer.continue_game()
 	
-func pause_timer():
+func pause_game():
 	$Timer.pause_game()
 
 func _on_Timer_timeout():
-	stop_timer()
+	stop_game()
 	
 	var text = evaluation()
 	$InventoryRect/Inventory.reset()
@@ -56,14 +56,14 @@ func _on_Timer_timeout():
 	pass
 
 func _on_change_scene(scene_name):
-	save_game(active_scene.name)
+	save_scene(active_scene.name)
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
 	add_child(next_scene)
 	move_child(next_scene,0)
 	next_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.queue_free()
 	active_scene = next_scene
-	load_game(active_scene.name)
+	load_scene(active_scene.name)
 	pass
 
 func _on_save_item(item_name):
@@ -82,7 +82,7 @@ func _on_change_dificultad(dificultad):
 	print(dificultad)
 	game_time = dificultad
 
-func save_game(scene_name):
+func save_scene(scene_name):
 	if not scene_name in saved_scenes:
 		saved_scenes.append(scene_name)
 	
@@ -94,7 +94,7 @@ func save_game(scene_name):
 		save_game.store_line(to_json(node_data))
 	save_game.close()
 
-func load_game(scene_name):
+func load_scene(scene_name):
 	if not scene_name in saved_scenes:
 		return
 	
