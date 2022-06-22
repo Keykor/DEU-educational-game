@@ -40,9 +40,9 @@ expand = true
 
 [node name="Title" type="Label" parent="."]
 margin_left = 212.0
-margin_top = 144.0
+margin_top = 96.0
 margin_right = 812.0
-margin_bottom = 257.0
+margin_bottom = 209.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )

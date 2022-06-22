@@ -61,7 +61,6 @@ func _on_change_scene(scene_name):
 	add_child(next_scene)
 	move_child(next_scene,0)
 	next_scene.connect("change_scene", self, "_on_change_scene")
-	next_scene.connect("save_item", self, "_on_save_item")
 	active_scene.queue_free()
 	active_scene = next_scene
 	load_game(active_scene.name)
@@ -100,8 +99,6 @@ func load_game(scene_name):
 		return
 	
 	var save_game = File.new()
-	if not save_game.file_exists("user://"+ scene_name +".save"):
-		return
 	
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	for i in save_nodes:
