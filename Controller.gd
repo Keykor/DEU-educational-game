@@ -8,6 +8,9 @@ var saved_scenes = []
 func _ready():
 	$Inventory.hide()
 	$Timer.hide()
+	$Pause.hide()
+	$PausePopup.hide()
+	$ConfigPopup.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.connect("save_item", self, "_on_save_item")
@@ -19,6 +22,7 @@ func _process(delta):
 func start_game():
 	$Inventory.show()
 	$Timer.show()
+	$Pause.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
 
@@ -122,3 +126,31 @@ func clear_persistence():
 	for scene in saved_scenes:
 		dir.remove("user://"+ scene +".save")
 	saved_scenes = []
+
+func _on_Pause_pressed():
+	get_tree().paused = true
+	$PausePopup.show()
+
+func _on_ResumeGame_pressed():
+	get_tree().paused = false
+	$PausePopup.hide()
+
+func _on_Salir_pressed(scene_name):
+	get_tree().paused = false
+	$Inventory.hide()
+	$Inventory.reset()
+	$Timer.hide()
+	$Timer.stop()
+	$Pause.hide()
+	$PausePopup.hide()
+	clear_persistence()
+	_on_change_scene(scene_name)
+
+func _on_Back_pressed():
+	$ConfigPopup.hide()
+
+func _on_PauseConfiguracion_pressed():
+	$InGameConfigPopup.show()
+
+func _on_Close_pressed():
+	$InGameConfigPopup.hide()

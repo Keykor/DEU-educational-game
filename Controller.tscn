@@ -1,9 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Inventory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/game_theme.tres" type="Theme" id=5]
+[ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Settings.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 0.243137 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 6 )
 
 [node name="Controller" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,6 +32,210 @@ script = ExtResource( 1 )
 wait_time = 30.0
 one_shot = true
 
+[node name="Pause" type="Button" parent="."]
+visible = false
+margin_left = 950.0
+margin_top = 9.0
+margin_right = 1002.0
+margin_bottom = 49.0
+theme = ExtResource( 5 )
+text = "||"
+
 [node name="Inventory" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="PausePopup" type="Popup" parent="."]
+pause_mode = 2
+margin_left = 3.0
+margin_top = -4.0
+margin_right = 1025.0
+margin_bottom = 598.0
+theme = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="PausePopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="PausePopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.5
+margin_top = -145.5
+margin_right = 161.5
+margin_bottom = 145.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePopup/CenterContainer"]
+margin_left = 49.0
+margin_top = 27.0
+margin_right = 273.0
+margin_bottom = 263.0
+custom_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="PausePopup/CenterContainer/VBoxContainer"]
+margin_right = 224.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 3 )
+text = "En Pausa"
+align = 1
+
+[node name="Control" type="Control" parent="PausePopup/CenterContainer/VBoxContainer"]
+margin_top = 95.0
+margin_right = 224.0
+margin_bottom = 95.0
+
+[node name="ResumeGame" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
+margin_top = 111.0
+margin_right = 224.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 200, 0 )
+text = "Continuar"
+
+[node name="Configuracion" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
+margin_top = 158.0
+margin_right = 224.0
+margin_bottom = 189.0
+text = "Configuracion"
+
+[node name="Salir" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
+margin_top = 205.0
+margin_right = 224.0
+margin_bottom = 236.0
+text = "Salir"
+
+[node name="ConfigPopup" type="Popup" parent="."]
+margin_right = 1022.0
+margin_bottom = 600.0
+theme = ExtResource( 5 )
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="ConfigPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
+
+[node name="Backpanel" type="Panel" parent="ConfigPopup"]
+margin_left = 271.0
+margin_top = 153.0
+margin_right = 751.0
+margin_bottom = 453.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Title" type="Label" parent="ConfigPopup"]
+margin_left = 287.0
+margin_top = 154.0
+margin_right = 737.0
+margin_bottom = 239.0
+rect_pivot_offset = Vector2( -173, 85 )
+size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Configuración"
+align = 1
+valign = 1
+
+[node name="Back" type="Button" parent="ConfigPopup"]
+margin_left = 462.0
+margin_top = 393.0
+margin_right = 562.0
+margin_bottom = 433.0
+theme = ExtResource( 5 )
+text = "Volver"
+
+[node name="Panel" type="Panel" parent="ConfigPopup"]
+margin_left = 287.0
+margin_top = 238.0
+margin_right = 737.0
+margin_bottom = 278.0
+
+[node name="Dificultad" type="Label" parent="ConfigPopup/Panel"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "Dificultad:"
+
+[node name="MenuButton" type="MenuButton" parent="ConfigPopup/Panel/Dificultad"]
+margin_left = 366.0
+margin_top = -1.0
+margin_right = 411.0
+margin_bottom = 30.0
+focus_mode = 2
+theme = ExtResource( 5 )
+text = "Fácil"
+
+[node name="Panel2" type="Panel" parent="ConfigPopup"]
+margin_left = 287.0
+margin_top = 286.0
+margin_right = 737.0
+margin_bottom = 326.0
+
+[node name="Panel3" type="Panel" parent="ConfigPopup"]
+margin_left = 287.0
+margin_top = 334.0
+margin_right = 737.0
+margin_bottom = 374.0
+
+[node name="InGameConfigPopup" type="Popup" parent="."]
+pause_mode = 2
+margin_right = 1022.0
+margin_bottom = 600.0
+theme = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="InGameConfigPopup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
+
+[node name="Backpanel" type="Panel" parent="InGameConfigPopup"]
+margin_left = 271.0
+margin_top = 153.0
+margin_right = 751.0
+margin_bottom = 453.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Title" type="Label" parent="InGameConfigPopup"]
+margin_left = 287.0
+margin_top = 154.0
+margin_right = 737.0
+margin_bottom = 239.0
+rect_pivot_offset = Vector2( -173, 85 )
+size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Configuración"
+align = 1
+valign = 1
+
+[node name="Close" type="Button" parent="InGameConfigPopup"]
+margin_left = 462.0
+margin_top = 393.0
+margin_right = 562.0
+margin_bottom = 433.0
+theme = ExtResource( 5 )
+text = "Cerrar"
+
+[node name="Panel2" type="Panel" parent="InGameConfigPopup"]
+margin_left = 287.0
+margin_top = 286.0
+margin_right = 737.0
+margin_bottom = 326.0
+
+[node name="Panel3" type="Panel" parent="InGameConfigPopup"]
+margin_left = 287.0
+margin_top = 334.0
+margin_right = 737.0
+margin_bottom = 374.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/ResumeGame" to="." method="_on_ResumeGame_pressed"]
+[connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/Configuracion" to="." method="_on_PauseConfiguracion_pressed"]
+[connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/Salir" to="." method="_on_Salir_pressed" binds= [ "MainMenu" ]]
+[connection signal="pressed" from="ConfigPopup/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="InGameConfigPopup/Close" to="." method="_on_Close_pressed"]

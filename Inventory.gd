@@ -27,7 +27,6 @@ func have_five_smiles():
 	return count > 4
 
 func _process(delta):
-	print(delta)
 	if right_pressed == true:
 		$Scroll.set_h_scroll($Scroll.get_h_scrollbar().value+(300*delta))
 	elif left_pressed == true:

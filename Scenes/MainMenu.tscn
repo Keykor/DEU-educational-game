@@ -77,4 +77,4 @@ text = "Configuraciones"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
-[connection signal="pressed" from="ConfigurationButton" to="." method="_on_button_pressed" binds= [ "Settings" ]]
+[connection signal="pressed" from="ConfigurationButton" to="." method="_on_ConfigurationButton_pressed"]

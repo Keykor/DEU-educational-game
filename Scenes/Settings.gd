@@ -1,4 +1,4 @@
-extends Node2D
+extends Popup
 
 signal change_scene(scene_name)
 signal change_dificultad(dificultad)
