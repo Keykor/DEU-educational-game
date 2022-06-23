@@ -107,6 +107,7 @@ margin_bottom = 236.0
 text = "Salir"
 
 [node name="ConfigPopup" type="Popup" parent="."]
+pause_mode = 2
 margin_right = 1022.0
 margin_bottom = 600.0
 theme = ExtResource( 5 )

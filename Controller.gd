@@ -30,6 +30,7 @@ func get_actual_time():
 	return $Timer/Label.text
 
 func stop_game():
+	$Pause.hide()
 	$Inventory.hide()
 	$Timer.hide()
 	$Timer.end_game()
