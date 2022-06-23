@@ -6,7 +6,7 @@ var aparato = false
 var saved_scenes = []
 
 func _ready():
-	$InventoryRect.hide()
+	$Inventory.hide()
 	$Timer.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
@@ -17,7 +17,7 @@ func _process(delta):
 	pass
 
 func start_game():
-	$InventoryRect.show()
+	$Inventory.show()
 	$Timer.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
@@ -26,7 +26,7 @@ func get_actual_time():
 	return $Timer/Label.text
 
 func stop_game():
-	$InventoryRect.hide()
+	$Inventory.hide()
 	$Timer.hide()
 	$Timer.end_game()
 
@@ -40,7 +40,7 @@ func _on_Timer_timeout():
 	stop_game()
 	
 	var text = evaluation()
-	$InventoryRect/Inventory.reset()
+	$Inventory.reset()
 	
 	var scene_name = "GameLose"
 	if (text == ""):
@@ -68,13 +68,13 @@ func _on_change_scene(scene_name):
 
 func _on_save_item(item_name):
 	print(item_name)
-	$InventoryRect/Inventory.save_item(item_name)
+	$Inventory.save_item(item_name)
 
 func evaluation():
 	var text = ""
 	if (aparato):
 		text = text + "- No apagaste el aparato \n"
-	if (not $InventoryRect/Inventory.have_five_smiles()):
+	if (not $Inventory.have_five_smiles()):
 		text = text + "- No conseguiste 5 caras \n"
 	return text
 
