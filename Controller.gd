@@ -13,7 +13,7 @@ func _ready():
 	$ConfigPopup.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
-	active_scene.connect("save_item", self, "_on_save_item")
+	# active_scene.connect("save_item", self, "_on_save_item")
 	pass
 
 func _process(delta):

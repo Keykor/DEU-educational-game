@@ -33,7 +33,6 @@ wait_time = 30.0
 one_shot = true
 
 [node name="Pause" type="Button" parent="."]
-visible = false
 margin_left = 950.0
 margin_top = 9.0
 margin_right = 1002.0
