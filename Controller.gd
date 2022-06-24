@@ -11,6 +11,7 @@ func _ready():
 	$Pause.hide()
 	$PausePopup.hide()
 	$ConfigPopup.hide()
+	$SecondFloorbtn.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
 	# active_scene.connect("save_item", self, "_on_save_item")
@@ -23,6 +24,7 @@ func start_game():
 	$Inventory.show()
 	$Timer.show()
 	$Pause.show()
+	$SecondFloorbtn.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
 
@@ -32,6 +34,7 @@ func get_actual_time():
 func stop_game():
 	$Pause.hide()
 	$Inventory.hide()
+	$SecondFloorbtn.hide()
 	$Timer.hide()
 	$Timer.end_game()
 
@@ -142,6 +145,7 @@ func _on_Salir_pressed(scene_name):
 	$Inventory.reset()
 	$Timer.hide()
 	$Timer.stop()
+	$SecondFloorbtn.hide()
 	$Pause.hide()
 	$PausePopup.hide()
 	clear_persistence()
@@ -155,3 +159,13 @@ func _on_PauseConfiguracion_pressed():
 
 func _on_Close_pressed():
 	$InGameConfigPopup.hide()
+
+func _on_SecondFloorbtn_pressed():
+	$EndGamePopup.show()
+
+func _on_ContinueGame_pressed():
+	$EndGamePopup.hide()
+
+func _on_EndGame_pressed():
+	$EndGamePopup.hide()
+	_on_Timer_timeout()
