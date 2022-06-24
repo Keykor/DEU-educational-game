@@ -49,10 +49,11 @@ text = "||"
 [node name="SecondFloorbtn" type="Button" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 456.0
-margin_top = -75.0
-margin_right = 556.0
-margin_bottom = 125.0
+margin_left = 419.0
+margin_top = 98.0
+margin_right = 519.0
+margin_bottom = 298.0
+rect_rotation = -90.0
 icon = ExtResource( 8 )
 flat = true
 expand_icon = true
@@ -251,7 +252,6 @@ margin_bottom = 374.0
 
 [node name="EndGamePopup" type="Popup" parent="."]
 pause_mode = 2
-visible = true
 margin_right = 1025.0
 margin_bottom = 601.0
 theme = ExtResource( 5 )
