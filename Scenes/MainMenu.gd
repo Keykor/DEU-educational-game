@@ -16,5 +16,5 @@ func _on_start_button_pressed():
 	_on_button_pressed("GameKitchen")
 
 
-func _on_ConfigurationButton_pressed():
-	get_parent().find_node("ConfigPopup").show()
+func _on_SettingsButton_pressed():
+	get_parent().find_node("SettingsPopup").popup()

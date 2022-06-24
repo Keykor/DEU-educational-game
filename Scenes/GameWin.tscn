@@ -27,7 +27,7 @@ margin_bottom = 269.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Ganaste"
+text = "$$won"
 align = 1
 
 [node name="Back" type="Button" parent="."]
@@ -36,6 +36,6 @@ margin_top = 433.0
 margin_right = 612.0
 margin_bottom = 473.0
 theme = ExtResource( 3 )
-text = "Volver al menu"
+text = "$$back to menu"
 
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed" binds= [ "MainMenu" ]]

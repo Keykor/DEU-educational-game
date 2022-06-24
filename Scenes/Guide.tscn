@@ -48,7 +48,7 @@ rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Instrucciones"
+text = "$$guide"
 align = 1
 valign = 1
 
@@ -60,9 +60,7 @@ margin_bottom = 380.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "- Presione los objetos para agarrarlos
-
-- Presione las flechas para moverse de escenario"
+text = "$$instruction 1"
 
 [node name="Back" type="Button" parent="."]
 margin_left = 462.0
@@ -70,10 +68,10 @@ margin_top = 435.0
 margin_right = 562.0
 margin_bottom = 475.0
 theme = ExtResource( 3 )
-text = "Volver"
+text = "$$back to menu"
 
 [node name="Smile" type="Sprite" parent="."]
-position = Vector2( 67, 162 )
+position = Vector2( 201, 162 )
 scale = Vector2( 0.71, 0.71 )
 texture = ExtResource( 5 )
 offset = Vector2( 909.859, 135.211 )

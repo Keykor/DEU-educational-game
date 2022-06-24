@@ -86,64 +86,64 @@ margin_right = 161.5
 margin_bottom = 145.5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePopup/CenterContainer"]
-margin_left = 49.0
+margin_left = 33.0
 margin_top = 27.0
-margin_right = 273.0
+margin_right = 290.0
 margin_bottom = 263.0
 custom_constants/separation = 16
 alignment = 1
 
 [node name="Label" type="Label" parent="PausePopup/CenterContainer/VBoxContainer"]
-margin_right = 224.0
+margin_right = 257.0
 margin_bottom = 79.0
 custom_fonts/font = SubResource( 3 )
-text = "En Pausa"
+text = "$$paused"
 align = 1
 
 [node name="Control" type="Control" parent="PausePopup/CenterContainer/VBoxContainer"]
 margin_top = 95.0
-margin_right = 224.0
+margin_right = 257.0
 margin_bottom = 95.0
 
 [node name="ResumeGame" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
 margin_top = 111.0
-margin_right = 224.0
+margin_right = 257.0
 margin_bottom = 142.0
 rect_min_size = Vector2( 200, 0 )
-text = "Continuar"
+text = "$$continue"
 
-[node name="Configuracion" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
 margin_top = 158.0
-margin_right = 224.0
+margin_right = 257.0
 margin_bottom = 189.0
-text = "Configuracion"
+text = "$$settings"
 
 [node name="Salir" type="Button" parent="PausePopup/CenterContainer/VBoxContainer"]
 margin_top = 205.0
-margin_right = 224.0
+margin_right = 257.0
 margin_bottom = 236.0
-text = "Salir"
+text = "$$exit"
 
-[node name="ConfigPopup" type="Popup" parent="."]
+[node name="SettingsPopup" type="Popup" parent="."]
 pause_mode = 2
 margin_right = 1022.0
 margin_bottom = 600.0
 theme = ExtResource( 5 )
 script = ExtResource( 7 )
 
-[node name="ColorRect" type="ColorRect" parent="ConfigPopup"]
+[node name="ColorRect" type="ColorRect" parent="SettingsPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
 
-[node name="Backpanel" type="Panel" parent="ConfigPopup"]
+[node name="Backpanel" type="Panel" parent="SettingsPopup"]
 margin_left = 271.0
 margin_top = 153.0
 margin_right = 751.0
 margin_bottom = 453.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="Title" type="Label" parent="ConfigPopup"]
+[node name="Title" type="Label" parent="SettingsPopup"]
 margin_left = 287.0
 margin_top = 154.0
 margin_right = 737.0
@@ -152,72 +152,90 @@ rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Configuración"
+text = "$$settings"
 align = 1
 valign = 1
 
-[node name="Back" type="Button" parent="ConfigPopup"]
+[node name="Back" type="Button" parent="SettingsPopup"]
 margin_left = 462.0
 margin_top = 393.0
 margin_right = 562.0
 margin_bottom = 433.0
 theme = ExtResource( 5 )
-text = "Volver"
+text = "$$back"
 
-[node name="Panel" type="Panel" parent="ConfigPopup"]
+[node name="Panel" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
 margin_top = 238.0
 margin_right = 737.0
 margin_bottom = 278.0
 
-[node name="Dificultad" type="Label" parent="ConfigPopup/Panel"]
+[node name="Difficulty" type="Label" parent="SettingsPopup/Panel"]
 margin_left = 17.0
 margin_top = 6.0
 margin_right = 115.0
 margin_bottom = 35.0
 theme = ExtResource( 5 )
-text = "Dificultad:"
+text = "$$difficulty"
 
-[node name="MenuButton" type="MenuButton" parent="ConfigPopup/Panel/Dificultad"]
+[node name="DifficultyMenuButton" type="MenuButton" parent="SettingsPopup/Panel/Difficulty"]
 margin_left = 366.0
 margin_top = -1.0
 margin_right = 411.0
 margin_bottom = 30.0
 focus_mode = 2
 theme = ExtResource( 5 )
-text = "Fácil"
+text = "$$dif"
 
-[node name="Panel2" type="Panel" parent="ConfigPopup"]
+[node name="Panel2" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
 margin_top = 286.0
 margin_right = 737.0
 margin_bottom = 326.0
 
-[node name="Panel3" type="Panel" parent="ConfigPopup"]
+[node name="Language" type="Label" parent="SettingsPopup/Panel2"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$language"
+
+[node name="LanguageMenuButton" type="MenuButton" parent="SettingsPopup/Panel2/Language"]
+margin_left = 366.0
+margin_top = -1.0
+margin_right = 411.0
+margin_bottom = 30.0
+focus_mode = 2
+theme = ExtResource( 5 )
+text = "$$lang"
+
+[node name="Panel3" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
 margin_top = 334.0
 margin_right = 737.0
 margin_bottom = 374.0
 
-[node name="InGameConfigPopup" type="Popup" parent="."]
+[node name="InGameSettingsPopup" type="Popup" parent="."]
 pause_mode = 2
 margin_right = 1022.0
 margin_bottom = 600.0
 theme = ExtResource( 5 )
+script = ExtResource( 7 )
 
-[node name="ColorRect" type="ColorRect" parent="InGameConfigPopup"]
+[node name="ColorRect" type="ColorRect" parent="InGameSettingsPopup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
 
-[node name="Backpanel" type="Panel" parent="InGameConfigPopup"]
+[node name="Backpanel" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 271.0
 margin_top = 153.0
 margin_right = 751.0
 margin_bottom = 453.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="Title" type="Label" parent="InGameConfigPopup"]
+[node name="Title" type="Label" parent="InGameSettingsPopup"]
 margin_left = 287.0
 margin_top = 154.0
 margin_right = 737.0
@@ -226,25 +244,42 @@ rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Configuración"
+text = "$$settings"
 align = 1
 valign = 1
 
-[node name="Close" type="Button" parent="InGameConfigPopup"]
+[node name="Close" type="Button" parent="InGameSettingsPopup"]
 margin_left = 462.0
 margin_top = 393.0
 margin_right = 562.0
 margin_bottom = 433.0
 theme = ExtResource( 5 )
-text = "Cerrar"
+text = "$$close"
 
-[node name="Panel2" type="Panel" parent="InGameConfigPopup"]
+[node name="Panel2" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 287.0
 margin_top = 286.0
 margin_right = 737.0
 margin_bottom = 326.0
 
-[node name="Panel3" type="Panel" parent="InGameConfigPopup"]
+[node name="Language" type="Label" parent="InGameSettingsPopup/Panel2"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$language"
+
+[node name="LanguageMenuButton" type="MenuButton" parent="InGameSettingsPopup/Panel2/Language"]
+margin_left = 366.0
+margin_top = -1.0
+margin_right = 411.0
+margin_bottom = 30.0
+focus_mode = 2
+theme = ExtResource( 5 )
+text = "$$lang"
+
+[node name="Panel3" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 287.0
 margin_top = 334.0
 margin_right = 737.0
@@ -252,6 +287,7 @@ margin_bottom = 374.0
 
 [node name="EndGamePopup" type="Popup" parent="."]
 pause_mode = 2
+visible = true
 margin_right = 1025.0
 margin_bottom = 601.0
 theme = ExtResource( 5 )
@@ -273,7 +309,7 @@ margin_top = -132.5
 margin_right = 279.5
 margin_bottom = -75.5
 custom_fonts/font = SubResource( 4 )
-text = "¿Seguro que deseas terminar?"
+text = "$$finish confirmation"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="EndGamePopup"]
 anchor_left = 0.5
@@ -289,7 +325,7 @@ margin_bottom = 15.5
 margin_right = 200.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 200, 0 )
-text = "Reanudar"
+text = "$$continue"
 
 [node name="Control" type="Control" parent="EndGamePopup/HBoxContainer"]
 margin_left = 204.0
@@ -301,15 +337,17 @@ margin_left = 208.0
 margin_right = 408.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 200, 0 )
-text = "Terminar"
+text = "$$finish"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="SecondFloorbtn" to="." method="_on_SecondFloorbtn_pressed"]
 [connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/ResumeGame" to="." method="_on_ResumeGame_pressed"]
-[connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/Configuracion" to="." method="_on_PauseConfiguracion_pressed"]
+[connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/Settings" to="." method="_on_PauseSettings_pressed"]
 [connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/Salir" to="." method="_on_Salir_pressed" binds= [ "MainMenu" ]]
-[connection signal="pressed" from="ConfigPopup/Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="InGameConfigPopup/Close" to="." method="_on_Close_pressed"]
+[connection signal="about_to_show" from="SettingsPopup" to="SettingsPopup" method="_on_Settings_about_to_show"]
+[connection signal="pressed" from="SettingsPopup/Back" to="." method="_on_Back_pressed"]
+[connection signal="about_to_show" from="InGameSettingsPopup" to="InGameSettingsPopup" method="_on_InGameSettings_about_to_show"]
+[connection signal="pressed" from="InGameSettingsPopup/Close" to="." method="_on_Close_pressed"]
 [connection signal="pressed" from="EndGamePopup/HBoxContainer/ContinueGame" to="." method="_on_ContinueGame_pressed"]
 [connection signal="pressed" from="EndGamePopup/HBoxContainer/EndGame" to="." method="_on_EndGame_pressed"]

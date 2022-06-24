@@ -46,7 +46,7 @@ margin_bottom = 209.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Título del juego"
+text = "$$title"
 align = 1
 valign = 1
 
@@ -56,7 +56,7 @@ margin_top = 305.0
 margin_right = 612.0
 margin_bottom = 345.0
 theme = ExtResource( 3 )
-text = "Empezar"
+text = "$$start game"
 
 [node name="GuideButton" type="Button" parent="."]
 margin_left = 412.0
@@ -64,17 +64,17 @@ margin_top = 355.0
 margin_right = 612.0
 margin_bottom = 395.0
 theme = ExtResource( 3 )
-text = "Cómo jugar"
+text = "$$guide"
 script = SubResource( 3 )
 
-[node name="ConfigurationButton" type="Button" parent="."]
+[node name="SettingsButton" type="Button" parent="."]
 margin_left = 412.0
 margin_top = 405.0
 margin_right = 612.0
 margin_bottom = 445.0
 theme = ExtResource( 3 )
-text = "Configuraciones"
+text = "$$settings"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
-[connection signal="pressed" from="ConfigurationButton" to="." method="_on_ConfigurationButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

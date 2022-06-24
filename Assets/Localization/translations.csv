@@ -1,0 +1,27 @@
+keys,en_US,es_AR
+$$title,Game's Title,Título del juego
+$$start game,Play,Empezar
+$$guide,How to play,Cómo jugar
+$$settings,Settings,Configuración
+$$paused,Paused,En pausa
+$$continue,Resume,Continuar
+$$exit,Exit,Salir
+$$difficulty,Difficulty,Dificultad
+$$language,Language,Idioma
+$$close,Close,Cerrar
+$$lost,You lost,Perdiste
+$$back to menu,Back to menu,Volver al menú
+$$won,You won,Ganaste
+$$easy,Easy,Fácil
+$$medium,Medium,Medio
+$$hard,Hard,Difícil
+$$instruction 1,"- Press the items to interact with them
+
+- Press the arrows to move between scenes","- Presione los objetos para interactuar con ellos
+
+- Presione las flechas para moverse de escenario"
+$$back,Back,Volver al menú
+$$english,English,Inglés
+$$spanish,Spanish,Español
+$$finish confirmation,Are you sure you want to finish,¿Seguro que deseas terminar?
+$$finish,Finish,Terminar
