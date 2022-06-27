@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Backgrounds/MainMenuBlur.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 1, 1, 0.243137 )
+bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25

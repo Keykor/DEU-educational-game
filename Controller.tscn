@@ -9,16 +9,16 @@
 [ext_resource path="res://Scenes/Settings.gd" type="Script" id=7]
 [ext_resource path="res://Assets/pass_Second_floor.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=3]
-size = 56
-font_data = ExtResource( 6 )
-
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 0.243137 )
+bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=3]
+size = 56
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 40
@@ -47,13 +47,12 @@ theme = ExtResource( 5 )
 text = "||"
 
 [node name="SecondFloorbtn" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 419.0
-margin_top = 98.0
-margin_right = 519.0
-margin_bottom = 298.0
-rect_rotation = -90.0
+margin_left = 462.0
+margin_right = 562.0
+margin_bottom = 100.0
 icon = ExtResource( 8 )
 flat = true
 expand_icon = true
@@ -74,6 +73,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -5.0
 color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
+
+[node name="Backpanel" type="Panel" parent="PausePopup"]
+margin_left = 349.5
+margin_top = 155.5
+margin_right = 672.5
+margin_bottom = 446.5
+custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="PausePopup"]
 anchor_left = 0.5
@@ -96,6 +102,7 @@ alignment = 1
 [node name="Label" type="Label" parent="PausePopup/CenterContainer/VBoxContainer"]
 margin_right = 257.0
 margin_bottom = 79.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "$$paused"
 align = 1
@@ -287,7 +294,6 @@ margin_bottom = 374.0
 
 [node name="EndGamePopup" type="Popup" parent="."]
 pause_mode = 2
-visible = true
 margin_right = 1025.0
 margin_bottom = 601.0
 theme = ExtResource( 5 )
@@ -299,6 +305,13 @@ margin_left = -1.0
 margin_bottom = -1.0
 color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
 
+[node name="Backpanel" type="Panel" parent="EndGamePopup"]
+margin_left = 213.0
+margin_top = 125.0
+margin_right = 818.0
+margin_bottom = 340.0
+custom_styles/panel = SubResource( 1 )
+
 [node name="Titulo" type="Label" parent="EndGamePopup"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -308,6 +321,7 @@ margin_left = -282.5
 margin_top = -132.5
 margin_right = 279.5
 margin_bottom = -75.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "$$finish confirmation"
 
