@@ -11,7 +11,13 @@ Trabajo integrador para la materia
 
 ## :computer: Instalación
 
-Para probar el juego es necesario:
+Para probar el juego:
+
+- Clonar este repositorio.
+- Abrir la carpeta "Executables".
+- Ejecutar el archivo correspondiente a su sistema operativo (Windows o Linux).
+
+Para probar el juego como desarrollador:
 
 - Descargar [Godot](https://godotengine.org/).
 - Clonar este repositorio.
