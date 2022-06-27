@@ -44,7 +44,7 @@ margin_bottom = 222.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Perdiste"
+text = "$$lost"
 align = 1
 
 [node name="RazonDeFracaso" type="Label" parent="."]
@@ -57,7 +57,7 @@ size_flags_horizontal = 7
 size_flags_stretch_ratio = 0.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Razón generica de perder "
+text = "Razón generica de perder"
 align = 1
 
 [node name="Back" type="Button" parent="."]
@@ -66,6 +66,6 @@ margin_top = 385.0
 margin_right = 612.0
 margin_bottom = 425.0
 theme = ExtResource( 3 )
-text = "Volver al menu"
+text = "$$back to menu"
 
 [connection signal="pressed" from="Back" to="." method="_on_button_pressed" binds= [ "MainMenu" ]]

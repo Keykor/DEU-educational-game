@@ -2,6 +2,7 @@ extends Node2D
 
 onready var active_scene = $MainMenu
 var game_time = 30.0
+var language = "$$spanish"
 var aparato = false
 var saved_scenes = []
 
@@ -10,8 +11,8 @@ func _ready():
 	$Timer.hide()
 	$Pause.hide()
 	$PausePopup.hide()
-	$ConfigPopup.hide()
 	$SecondFloorbtn.hide()
+	$SettingsPopup.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
 	# active_scene.connect("save_item", self, "_on_save_item")
@@ -40,20 +41,20 @@ func stop_game():
 
 func continue_game():
 	$Timer.continue_game()
-	
+
 func pause_game():
 	$Timer.pause_game()
 
 func _on_Timer_timeout():
 	stop_game()
-	
+
 	var text = evaluation()
 	$Inventory.reset()
-	
+
 	var scene_name = "GameLose"
 	if (text == ""):
 		scene_name = "GameWin"
-		
+
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
 	next_scene.init(text)
 	add_child(next_scene)
@@ -86,14 +87,16 @@ func evaluation():
 		text = text + "- No conseguiste 5 caras \n"
 	return text
 
-func _on_change_dificultad(dificultad):
-	print(dificultad)
-	game_time = dificultad
+func _on_change_difficulty(difficulty):
+	self.game_time = difficulty
+
+func _on_change_language(lang):
+	self.language = lang
 
 func save_scene(scene_name):
-	if not scene_name in saved_scenes:
-		saved_scenes.append(scene_name)
-	
+	if not scene_name in self.saved_scenes:
+		self.saved_scenes.append(scene_name)
+
 	var save_game = File.new()
 	save_game.open("user://"+ scene_name +".save", File.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
@@ -103,15 +106,15 @@ func save_scene(scene_name):
 	save_game.close()
 
 func load_scene(scene_name):
-	if not scene_name in saved_scenes:
+	if not scene_name in self.saved_scenes:
 		return
-	
+
 	var save_game = File.new()
-	
+
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	for i in save_nodes:
 		i.queue_free()
-		
+
 	save_game.open("user://"+ scene_name +".save", File.READ)
 	while not save_game.eof_reached():
 		var node_data = parse_json(save_game.get_line())
@@ -152,13 +155,13 @@ func _on_Salir_pressed(scene_name):
 	_on_change_scene(scene_name)
 
 func _on_Back_pressed():
-	$ConfigPopup.hide()
+	$SettingsPopup.hide()
 
-func _on_PauseConfiguracion_pressed():
-	$InGameConfigPopup.show()
+func _on_PauseSettings_pressed():
+	$InGameSettingsPopup.popup()
 
 func _on_Close_pressed():
-	$InGameConfigPopup.hide()
+	$InGameSettingsPopup.hide()
 
 func _on_SecondFloorbtn_pressed():
 	$EndGamePopup.show()
