@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interactuables/InteractuableButton.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Smile.png" type="Texture" id=2]
+
+[node name="SmileButton" type="Button" groups=["Persist"]]
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_InteractuableButton_pressed" binds= [ "Smile" ]]

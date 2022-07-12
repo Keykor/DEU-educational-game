@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Backgrounds/Living.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameLivingRoom.gd" type="Script" id=2]
-[ext_resource path="res://Interactuables/SmileButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactuables/InteractuableButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/pass_R.png" type="Texture" id=4]
 [ext_resource path="res://Assets/pass_L.png" type="Texture" id=5]
 

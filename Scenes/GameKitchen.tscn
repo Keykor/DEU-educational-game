@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Backgrounds/Kitchen.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameKitchen.gd" type="Script" id=2]
-[ext_resource path="res://Interactuables/SmileButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactuables/InteractuableButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/pass_R.png" type="Texture" id=4]
 
 [node name="Kitchen" type="Node2D"]
@@ -29,7 +29,7 @@ margin_top = 93.0
 margin_right = 250.0
 margin_bottom = 199.0
 
-[node name="SmileButton2" parent="." instance=ExtResource( 3 )]
+[node name="WaterBottleButton" parent="." instance=ExtResource( 3 )]
 margin_left = 608.0
 margin_top = 368.0
 margin_right = 720.0

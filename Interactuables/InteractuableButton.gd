@@ -1,14 +1,7 @@
 extends Button
 
-var item_name
-
 func _ready():
-	item_name = "Smile"
-	var controller = get_parent().get_parent()
-	self.connect("pressed", controller, "_on_save_item", [item_name])
-
-func _pressed():
-	hide()
+	pass
 
 func save():
 	var save_dict = {
@@ -19,3 +12,9 @@ func save():
 		"is_visible": is_visible()
 	}
 	return save_dict
+
+
+func _on_InteractuableButton_pressed(item_name):
+	hide()
+	var controller = get_parent().get_parent()
+	controller._on_save_item(item_name)
