@@ -441,8 +441,7 @@ margin_right = 297.801
 margin_bottom = 97.883
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
-text = "Lluvias fuertes se acercan al arroyo y la inundación es inminente.
-Se recomienda que sigan los protocolos de prevención."
+text = "$$news dialog"
 align = 1
 valign = 1
 autowrap = true
@@ -453,7 +452,7 @@ margin_top = 90.0
 margin_right = 290.0
 margin_bottom = 151.0
 custom_fonts/font = SubResource( 1 )
-text = "¡RIESGO DE INUNDACIÓN!"
+text = "$$news title"
 align = 1
 valign = 1
 
@@ -469,9 +468,7 @@ margin_top = -103.0
 margin_right = 238.0
 margin_bottom = 104.0
 custom_fonts/font = SubResource( 6 )
-text = "ÚLTIMO MOMENTO
-SE APROXIMAN 
-FUERTES LLUVIAS"
+text = "$$news extended title"
 align = 1
 valign = 1
 
@@ -528,7 +525,7 @@ margin_top = 526.0
 margin_right = 464.0
 margin_bottom = 578.0
 custom_fonts/font = SubResource( 9 )
-text = "Presione para continuar..."
+text = "$$intro continue"
 align = 1
 valign = 1
 

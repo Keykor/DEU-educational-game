@@ -25,3 +25,16 @@ $$instruction 1,"- Press the items to interact with them
 $$back,Back,Volver al menú
 $$english,English,Inglés
 $$spanish,Spanish,Español
+$$intro continue,Press to continue…,Presione para continuar...
+$$news dialog,"Heavy rains are approaching the creek and flooding is imminent.
+It is recommended that you follow prevention protocols.  ","Lluvias fuertes se acercan al arroyo y la inundación es inminente.
+Se recomienda que sigan los protocolos de prevención. "
+$$news title,FLOOD RISK!,¡RIESGO DE INUNDACIÓN!
+$$news extended title,"BREAKING NEWS
+HEAVY RAINS
+APROACHING","ÚLTIMO MOMENTO
+SE APROXIMAN
+FUERTES LLUVIAS"
+$$mistake energy,You didn’t switch off the power,No cortaste la luz
+$$mistake important items,You didn’t gather all the important items,No agarraste todos los objetos importantes
+$$mistake toxic items,You didn’t gather all the toxic items,No agarraste todos los objetos tóxicos

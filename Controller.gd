@@ -55,7 +55,7 @@ func _on_Timer_timeout():
 		scene_name = "GameWin"
 
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
-	next_scene.init(response["text"])
+	next_scene.init(self.translate_mistakes(response["mistakes"]))
 	add_child(next_scene)
 	next_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.queue_free()
@@ -63,6 +63,14 @@ func _on_Timer_timeout():
 	print("Game ended")
 	pass
 
+func translate_mistakes(mistakes):
+	var full_message = ""
+	for mistake in mistakes:
+		full_message += "- "
+		full_message += TranslationServer.translate(mistake)
+		full_message += "\n"
+	return full_message
+	
 func _on_change_scene(scene_name):
 	save_scene(active_scene.name)
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
@@ -78,26 +86,22 @@ func save_item(item_name):
 	$Inventory.save_item(item_name)
 
 func evaluation():
-	var win = true
-	var text = ""
+	var mistakes = []
 	
 	if (electric_switch):
-		text = text + "- No cortaste la luz \n"
-		win = false
+		mistakes.append("$$mistake energy")
 		
 	var response = $Inventory.has_all_the_necessary_for_the_win()
 	
 	if (!response["needed_items"]):
-		text = text + "- No agarraste todos los objetos importantes \n"
-		win = false
+		mistakes.append("$$mistake important items")
 		
 	if (!response["toxic_items"]):
-		text = text + "- No agarraste todos los objetos tóxicos \n"
-		win = false
+		mistakes.append("$$mistake toxic items")
 		
 	return {
-		"win": win,
-		"text": text
+		"win": mistakes.empty(),
+		"mistakes": mistakes
 	}
 
 func _on_change_difficulty(difficulty):
