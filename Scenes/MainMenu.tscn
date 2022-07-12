@@ -38,11 +38,26 @@ margin_bottom = 598.0
 texture = ExtResource( 4 )
 expand = true
 
-[node name="Title" type="Label" parent="."]
-margin_left = 212.0
-margin_top = 96.0
-margin_right = 812.0
-margin_bottom = 209.0
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.0
+margin_right = 512.0
+margin_bottom = 299.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+margin_left = 387.0
+margin_top = 153.0
+margin_right = 637.0
+margin_bottom = 444.0
+custom_constants/separation = 16
+
+[node name="Title" type="Label" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_right = 250.0
+margin_bottom = 103.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -50,31 +65,36 @@ text = "$$title"
 align = 1
 valign = 1
 
-[node name="PlayButton" type="Button" parent="."]
-margin_left = 412.0
-margin_top = 305.0
-margin_right = 612.0
-margin_bottom = 345.0
+[node name="PlayButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 119.0
+margin_right = 250.0
+margin_bottom = 150.0
 theme = ExtResource( 3 )
 text = "$$start game"
 
-[node name="GuideButton" type="Button" parent="."]
-margin_left = 412.0
-margin_top = 355.0
-margin_right = 612.0
-margin_bottom = 395.0
+[node name="GuideButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 166.0
+margin_right = 250.0
+margin_bottom = 197.0
 theme = ExtResource( 3 )
 text = "$$guide"
 script = SubResource( 3 )
 
-[node name="SettingsButton" type="Button" parent="."]
-margin_left = 412.0
-margin_top = 405.0
-margin_right = 612.0
-margin_bottom = 445.0
+[node name="GameInstructionsbtn" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 213.0
+margin_right = 250.0
+margin_bottom = 244.0
+theme = ExtResource( 3 )
+text = "Instrucciones"
+
+[node name="SettingsButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 250.0
+margin_bottom = 291.0
 theme = ExtResource( 3 )
 text = "$$settings"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/GameInstructionsbtn" to="." method="_on_button_pressed" binds= [ "Instrucciones" ]]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
