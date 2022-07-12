@@ -20,12 +20,21 @@ func reset():
 		item.queue_free()
 	items = []
 
-func have_five_smiles():
-	var count = 0
+
+func has_all_the_necessary_for_the_win():
+	var needed_items = ["water_bottle","money","female_dni","medikit"]
+	var toxic_items = ["cif","raid"]
 	for item in items:
-		if item.name_is("Smile"):
-			count = count + 1
-	return count > 4
+		var i = needed_items.find(item.item_name)
+		if (i != -1):
+			needed_items.pop_at(i)
+		i = toxic_items.find(item.item_name)
+		if (i != -1):
+			toxic_items.pop_at(i)
+	return {
+		"needed_items": needed_items.empty(),
+		"toxic_items": toxic_items.empty()
+	}
 
 func _process(delta):
 	if right_pressed == true:

@@ -3,7 +3,7 @@ extends Node2D
 onready var active_scene = $MainMenu
 var game_time = 30.0
 var language = "$$spanish"
-var aparato = false
+var electric_switch = true
 var saved_scenes = []
 
 func _ready():
@@ -15,7 +15,6 @@ func _ready():
 	$SettingsPopup.hide()
 	clear_persistence()
 	active_scene.connect("change_scene", self, "_on_change_scene")
-	# active_scene.connect("save_item", self, "_on_save_item")
 	pass
 
 func _process(delta):
@@ -48,15 +47,15 @@ func pause_game():
 func _on_Timer_timeout():
 	stop_game()
 
-	var text = evaluation()
+	var response = evaluation()
 	$Inventory.reset()
 
 	var scene_name = "GameLose"
-	if (text == ""):
+	if (response["win"]):
 		scene_name = "GameWin"
 
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
-	next_scene.init(text)
+	next_scene.init(response["text"])
 	add_child(next_scene)
 	next_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.queue_free()
@@ -76,16 +75,30 @@ func _on_change_scene(scene_name):
 	pass
 
 func save_item(item_name):
-	print(item_name)
 	$Inventory.save_item(item_name)
 
 func evaluation():
+	var win = true
 	var text = ""
-	if (aparato):
-		text = text + "- No apagaste el aparato \n"
-	if (not $Inventory.have_five_smiles()):
-		text = text + "- No conseguiste 5 caras \n"
-	return text
+	
+	if (electric_switch):
+		text = text + "- No cortaste la luz \n"
+		win = false
+		
+	var response = $Inventory.has_all_the_necessary_for_the_win()
+	
+	if (!response["needed_items"]):
+		text = text + "- No agarraste todos los objetos importantes \n"
+		win = false
+		
+	if (!response["toxic_items"]):
+		text = text + "- No agarraste todos los objetos tóxicos \n"
+		win = false
+		
+	return {
+		"win": win,
+		"text": text
+	}
 
 func _on_change_difficulty(difficulty):
 	self.game_time = difficulty
@@ -172,3 +185,6 @@ func _on_ContinueGame_pressed():
 func _on_EndGame_pressed():
 	$EndGamePopup.hide()
 	_on_Timer_timeout()
+
+func switch_switch():
+	electric_switch = !electric_switch
