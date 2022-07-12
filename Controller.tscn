@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=6]
 [ext_resource path="res://Scenes/Settings.gd" type="Script" id=7]
 [ext_resource path="res://Assets/pass_Second_floor.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Intro.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
@@ -352,6 +353,8 @@ margin_right = 408.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 200, 0 )
 text = "$$finish"
+
+[node name="Intro" parent="." instance=ExtResource( 9 )]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]

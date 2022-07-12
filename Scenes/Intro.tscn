@@ -1,0 +1,535 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Intro/cat_background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Intro/cat.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Intro/tv.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Intro/news_backgrounds.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Intro/person.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/COMIC.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Intro/news_person.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Intro/dialog_bubble.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Intro/news_panel.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Intro/person_front.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Intro.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=10]
+size = 26
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 43
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 48
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tv:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tv:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PersonFront/DialogBubble:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("PersonFront:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1344, 405 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Tv/CatBackground:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Person:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 906, 467 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("PersonFront/Label:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "cat"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tv/CatBackground/Cat:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.0, 0.0, -5.0, 5.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tv/CatBackground:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tv/NewsBackgrounds:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "news_start"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tv/NewsPanel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tv/NewsBackgrounds/NewsPerson:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -43 ), Vector2( -150, -43 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tv/NewsBackgrounds/NewsPerson:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Tv/NewsBackgrounds/NewsPerson/DialogBubble:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Tv/CatBackground:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Tv/NewsBackgrounds:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "person_talk"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tv/NewsBackgrounds:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tv/NewsPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tv/CatBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Person:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 906, 467 ), Vector2( 1306, 467 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PersonFront:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1272, 405 ), Vector2( 736, 405 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Tv:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("PersonFront/DialogBubble:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("PersonFront/DialogBubble:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("PersonFront/Label:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("PersonFront/Label:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("PersonFront/Label:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "placa_roja"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tv/CatBackground:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Tv/NewsPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Tv/NewsBackgrounds:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=9]
+size = 37
+font_data = ExtResource( 6 )
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 1032.0
+margin_bottom = 600.0
+color = Color( 0.964706, 0.576471, 0.313726, 1 )
+
+[node name="Tv" type="Sprite" parent="."]
+position = Vector2( 409, 255 )
+texture = ExtResource( 3 )
+
+[node name="NewsBackgrounds" type="Sprite" parent="Tv"]
+visible = false
+texture = ExtResource( 4 )
+
+[node name="NewsPerson" type="Sprite" parent="Tv/NewsBackgrounds"]
+position = Vector2( -150, -43 )
+scale = Vector2( 0.515244, 0.515244 )
+texture = ExtResource( 7 )
+
+[node name="DialogBubble" type="Sprite" parent="Tv/NewsBackgrounds/NewsPerson"]
+position = Vector2( 529.846, -58.2248 )
+scale = Vector2( 1.5696, 1.89198 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="Tv/NewsBackgrounds/NewsPerson/DialogBubble"]
+margin_left = -142.199
+margin_top = -84.117
+margin_right = 297.801
+margin_bottom = 97.883
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Lluvias fuertes se acercan al arroyo y la inundación es inminente.
+Se recomienda que sigan los protocolos de prevención."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Riesgo" type="Label" parent="Tv/NewsBackgrounds"]
+margin_left = -289.0
+margin_top = 90.0
+margin_right = 290.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 1 )
+text = "¡RIESGO DE INUNDACIÓN!"
+align = 1
+valign = 1
+
+[node name="NewsPanel" type="Sprite" parent="Tv"]
+visible = false
+position = Vector2( 0.0824695, -0.227496 )
+scale = Vector2( 1.03474, 1.03622 )
+texture = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Tv/NewsPanel"]
+margin_left = -237.0
+margin_top = -103.0
+margin_right = 238.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 6 )
+text = "ÚLTIMO MOMENTO
+SE APROXIMAN 
+FUERTES LLUVIAS"
+align = 1
+valign = 1
+
+[node name="CatBackground" type="Sprite" parent="Tv"]
+texture = ExtResource( 1 )
+
+[node name="Cat" type="Sprite" parent="Tv/CatBackground"]
+texture = ExtResource( 2 )
+
+[node name="Person" type="Sprite" parent="."]
+position = Vector2( 906, 467 )
+texture = ExtResource( 5 )
+
+[node name="PersonFront" type="Sprite" parent="."]
+position = Vector2( 1344, 405 )
+scale = Vector2( 1.23979, 1.19001 )
+texture = ExtResource( 10 )
+
+[node name="DialogBubble" type="Sprite" parent="PersonFront"]
+visible = false
+position = Vector2( -254.568, -104.004 )
+rotation = 3.39641
+scale = Vector2( 0.719036, 1.00459 )
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="PersonFront"]
+visible = false
+margin_left = -452.497
+margin_top = -162.184
+margin_right = -128.497
+margin_bottom = -139.184
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+anims/RESET = SubResource( 3 )
+anims/cat = SubResource( 4 )
+anims/news_start = SubResource( 5 )
+anims/person_talk = SubResource( 8 )
+anims/placa_roja = SubResource( 7 )
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -74.0
+margin_top = -30.0
+margin_right = 1132.0
+margin_bottom = 692.0
+
+[node name="Continuar" type="Label" parent="."]
+margin_left = 37.0
+margin_top = 526.0
+margin_right = 464.0
+margin_bottom = 578.0
+custom_fonts/font = SubResource( 9 )
+text = "Presione para continuar..."
+align = 1
+valign = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
