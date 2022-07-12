@@ -2,9 +2,6 @@ extends TextureRect
 
 var item_name = ""
 
-func _ready():
-	self.set_size(Vector2(90,90))
-
 func name_is(asked_name):
 	return item_name == asked_name
 

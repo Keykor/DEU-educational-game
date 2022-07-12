@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Backgrounds/Living.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameLivingRoom.gd" type="Script" id=2]
 [ext_resource path="res://Interactuables/InteractuableButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/pass_R.png" type="Texture" id=4]
 [ext_resource path="res://Assets/pass_L.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/money.png" type="Texture" id=6]
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource( 2 )
@@ -32,11 +33,14 @@ icon = ExtResource( 5 )
 flat = true
 expand_icon = true
 
-[node name="SmileButton" parent="." instance=ExtResource( 3 )]
-margin_left = 270.0
-margin_top = 342.0
-margin_right = 382.0
-margin_bottom = 448.0
+[node name="Money" parent="." instance=ExtResource( 3 )]
+margin_left = 229.0
+margin_top = 348.0
+margin_right = 341.0
+margin_bottom = 454.0
+texture_normal = ExtResource( 6 )
+expand = false
 
 [connection signal="pressed" from="NextRoomButton" to="." method="_on_button_pressed" binds= [ "GameBedroom" ]]
 [connection signal="pressed" from="PreviousRoomButton" to="." method="_on_button_pressed" binds= [ "GameKitchen" ]]
+[connection signal="pressed" from="Money" to="Money" method="_on_InteractuableTextureButton_pressed" binds= [ "money" ]]
