@@ -85,7 +85,7 @@ margin_top = 213.0
 margin_right = 250.0
 margin_bottom = 244.0
 theme = ExtResource( 3 )
-text = "Instrucciones"
+text = "$$instructions"
 
 [node name="SettingsButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
 margin_top = 260.0
@@ -96,5 +96,5 @@ text = "$$settings"
 
 [connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/PlayButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/GuideButton" to="." method="_on_button_pressed" binds= [ "Guide" ]]
-[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/GameInstructionsbtn" to="." method="_on_button_pressed" binds= [ "Instrucciones" ]]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/GameInstructionsbtn" to="." method="_on_button_pressed" binds= [ "Instructions" ]]
 [connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
