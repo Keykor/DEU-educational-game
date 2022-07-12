@@ -75,7 +75,7 @@ func _on_change_scene(scene_name):
 	load_scene(active_scene.name)
 	pass
 
-func _on_save_item(item_name):
+func save_item(item_name):
 	print(item_name)
 	$Inventory.save_item(item_name)
 

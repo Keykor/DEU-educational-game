@@ -9,7 +9,8 @@ func _ready():
 	left_pressed = false
 
 func save_item(item_name):
-	var item = load("res://Scenes/Items/" + item_name + ".tscn").instance()
+	var item = load("res://Scenes/Item.tscn").instance()
+	item.set_item(item_name)
 	items.append(item)
 	$Scroll/Container.add_child(item)
 	pass

@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 func _ready():
 	pass
@@ -13,8 +13,7 @@ func save():
 	}
 	return save_dict
 
-
-func _on_InteractuableButton_pressed(item_name):
+func _on_InteractuableTextureButton_pressed(item_name):
 	hide()
 	var controller = get_parent().get_parent()
-	controller._on_save_item(item_name)
+	controller.save_item(item_name)
