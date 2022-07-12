@@ -62,9 +62,18 @@ func set_current_language():
 	var controller = get_tree().get_current_scene()
 	$Panel2/Language/LanguageMenuButton.text = controller.language
 
-
 func _on_Settings_about_to_show():
 	self.set_current_language()
+	self.set_current_outline()
 
 func _on_InGameSettings_about_to_show():
 	self.set_current_language()
+	self.set_current_outline()
+	
+func set_current_outline():
+	var controller = get_tree().get_current_scene()
+	$Panel3/Outline/CheckButton.pressed = controller.outline_items
+
+func _on_CheckButton_pressed():
+	var controller = get_tree().get_current_scene()
+	controller.outline_items = !controller.outline_items

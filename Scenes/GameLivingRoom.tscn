@@ -42,6 +42,7 @@ margin_right = 341.0
 margin_bottom = 454.0
 texture_normal = ExtResource( 6 )
 expand = false
+item_name = "money"
 
 [node name="ElectricSwitch" type="TextureButton" parent="."]
 margin_left = 295.0

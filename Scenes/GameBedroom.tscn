@@ -41,6 +41,7 @@ margin_right = 536.0
 margin_bottom = 393.0
 texture_normal = ExtResource( 6 )
 expand = false
+item_name = "female_dni"
 
 [connection signal="pressed" from="NextRoomButton" to="." method="_on_button_pressed" binds= [ "GameBathroom" ]]
 [connection signal="pressed" from="PreviousRoomButton" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]

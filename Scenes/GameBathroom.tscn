@@ -31,6 +31,7 @@ margin_right = 963.0
 margin_bottom = 332.0
 texture_normal = ExtResource( 6 )
 expand = false
+item_name = "medikit"
 
 [node name="Raid" parent="." instance=ExtResource( 3 )]
 margin_left = 131.0
@@ -39,6 +40,7 @@ margin_right = 163.0
 margin_bottom = 432.0
 texture_normal = ExtResource( 5 )
 expand = false
+item_name = "raid"
 
 [connection signal="pressed" from="PreviousRoomButton" to="." method="_on_button_pressed" binds= [ "GameBedroom" ]]
 [connection signal="pressed" from="Medikit" to="Medikit" method="_on_InteractuableTextureButton_pressed" binds= [ "medikit" ]]

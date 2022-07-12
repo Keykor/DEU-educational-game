@@ -5,6 +5,7 @@ var game_time = 30.0
 var language = "$$spanish"
 var electric_switch = true
 var saved_scenes = []
+var outline_items = false
 
 func _ready():
 	$Inventory.hide()
@@ -14,6 +15,7 @@ func _ready():
 	$SecondFloorbtn.hide()
 	$SettingsPopup.hide()
 	clear_persistence()
+	electric_switch = true
 	active_scene.connect("change_scene", self, "_on_change_scene")
 	pass
 
@@ -139,8 +141,12 @@ func load_scene(scene_name):
 			continue
 		var new_object = load(node_data["filename"]).instance()
 		get_node(node_data["parent"]).add_child(new_object)
+		new_object.item_name = node_data["item_name"]
+		new_object.texture_normal = load("res://Assets/Sprites/" + node_data["item_name"] + ".png")
 		new_object.rect_position.x = node_data["pos_x"]
 		new_object.rect_position.y = node_data["pos_y"]
+		new_object.rect_size.x = node_data["size_x"]
+		new_object.rect_size.y = node_data["size_y"]
 		if node_data["is_visible"] == false:
 			new_object.hide()
 	save_game.close()

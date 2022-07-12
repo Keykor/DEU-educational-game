@@ -33,6 +33,7 @@ margin_bottom = 454.0
 texture_normal = ExtResource( 7 )
 expand = false
 stretch_mode = 2
+item_name = "water_bottle"
 
 [node name="Cif" parent="." instance=ExtResource( 3 )]
 margin_left = 830.0
@@ -41,6 +42,7 @@ margin_right = 869.0
 margin_bottom = 364.0
 texture_normal = ExtResource( 5 )
 expand = false
+item_name = "cif"
 
 [connection signal="pressed" from="NextRoomButton" to="." method="_on_button_pressed" binds= [ "GameLivingRoom" ]]
 [connection signal="pressed" from="WatterBottle" to="WatterBottle" method="_on_InteractuableTextureButton_pressed" binds= [ "water_bottle" ]]
