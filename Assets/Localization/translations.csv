@@ -12,6 +12,8 @@ $$close,Close,Cerrar
 $$lost,You lost,Perdiste
 $$back to menu,Back to menu,Volver al menú
 $$won,You won,Ganaste
+$$end game confirmation,Are you sure you want to finish?,¿Seguro que deseas terminar?
+$$end game,Finish,Terminar
 $$easy,Easy,Fácil
 $$medium,Medium,Medio
 $$hard,Hard,Difícil
@@ -23,5 +25,3 @@ $$instruction 1,"- Press the items to interact with them
 $$back,Back,Volver al menú
 $$english,English,Inglés
 $$spanish,Spanish,Español
-$$finish confirmation,Are you sure you want to finish,¿Seguro que deseas terminar?
-$$finish,Finish,Terminar

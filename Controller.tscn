@@ -324,7 +324,7 @@ margin_right = 279.5
 margin_bottom = -75.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
-text = "$$finish confirmation"
+text = "$$end game confirmation"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="EndGamePopup"]
 anchor_left = 0.5
@@ -352,7 +352,7 @@ margin_left = 208.0
 margin_right = 408.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 200, 0 )
-text = "$$finish"
+text = "$$end game"
 
 [node name="Intro" parent="." instance=ExtResource( 9 )]
 
