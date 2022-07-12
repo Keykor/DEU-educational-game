@@ -47,3 +47,5 @@ $$instruction 4,- Take care of your documents,- Busca tus documentos
 $$instruction 5,- Find your flashlight,- Encuentra tu linterna
 $$instruction 6,- Pick up your money,- Junta tu dinero
 $$protocol,Handbook with protocol:,Manual con protocolo: 
+$$play intro,Replay intro,Reproducir introducción
+$$outline,Outline items,Remarcar objetos

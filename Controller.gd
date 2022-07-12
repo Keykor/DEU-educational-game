@@ -82,7 +82,6 @@ func _on_change_scene(scene_name):
 	active_scene.queue_free()
 	active_scene = next_scene
 	load_scene(active_scene.name)
-	pass
 
 func save_item(item_name):
 	$Inventory.save_item(item_name)
@@ -198,3 +197,10 @@ func _on_EndGame_pressed():
 
 func switch_switch():
 	electric_switch = !electric_switch
+
+func play_intro():
+	save_scene(active_scene.name)
+	var next_scene = load("res://Scenes/Intro.tscn").instance()
+	add_child(next_scene)
+	active_scene.hide()
+	move_child(next_scene,0)

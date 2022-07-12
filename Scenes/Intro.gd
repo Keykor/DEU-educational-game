@@ -13,5 +13,6 @@ func _ready():
 func _on_Button_pressed():
 	if (current_animation >= 4):
 		queue_free()
+		get_parent().active_scene.show()
 		return
 	next_animation()

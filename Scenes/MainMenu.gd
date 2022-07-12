@@ -18,3 +18,6 @@ func _on_start_button_pressed():
 
 func _on_SettingsButton_pressed():
 	get_parent().find_node("SettingsPopup").popup()
+
+func _on_PlayIntroButton_pressed():
+	get_parent().play_intro()
