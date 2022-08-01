@@ -6,8 +6,11 @@ var language = "$$spanish"
 var electric_switch = true
 var saved_scenes = []
 var outline_items = false
+var activity_time = 5
 
 func _ready():
+	OS.window_maximized = true
+	$Hint.hide()
 	$Inventory.hide()
 	$Timer.hide()
 	$Pause.hide()
@@ -25,6 +28,7 @@ func _process(delta):
 func start_game():
 	$Inventory.show()
 	$Timer.show()
+	$ActivityTimer.start(activity_time)
 	$Pause.show()
 	$SecondFloorbtn.show()
 	$Timer.set_game_time(game_time)
@@ -37,6 +41,8 @@ func stop_game():
 	$Pause.hide()
 	$Inventory.hide()
 	$SecondFloorbtn.hide()
+	$Hint.hide()
+	$ActivityTimer.stop()
 	$Timer.hide()
 	$Timer.end_game()
 
@@ -168,6 +174,8 @@ func _on_Salir_pressed(scene_name):
 	get_tree().paused = false
 	$Inventory.hide()
 	$Inventory.reset()
+	$ActivityTimer.stop()
+	$Hint.hide()
 	$Timer.hide()
 	$Timer.stop()
 	$SecondFloorbtn.hide()
@@ -204,3 +212,11 @@ func play_intro():
 	add_child(next_scene)
 	active_scene.hide()
 	move_child(next_scene,0)
+
+func _on_ActivityTimer_timeout():
+	$Hint.show()
+
+func _input(event):
+	if event is InputEventMouse and event.is_pressed():
+		$ActivityTimer.start(activity_time)
+		$Hint.hide()

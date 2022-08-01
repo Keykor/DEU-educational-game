@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
@@ -29,6 +29,9 @@ font_data = ExtResource( 6 )
 size = 40
 font_data = ExtResource( 6 )
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.341176, 0.341176, 0.341176, 0.713726 )
+
 [node name="Controller" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -38,8 +41,9 @@ script = ExtResource( 1 )
 wait_time = 30.0
 one_shot = true
 
+[node name="ActivityTimer" type="Timer" parent="."]
+
 [node name="Pause" type="Button" parent="."]
-visible = false
 margin_left = 950.0
 margin_top = 9.0
 margin_right = 1002.0
@@ -383,8 +387,35 @@ rect_min_size = Vector2( 200, 0 )
 text = "$$end game"
 
 [node name="Intro" parent="." instance=ExtResource( 9 )]
+visible = false
+
+[node name="Hint" type="Panel" parent="."]
+visible = false
+margin_left = 678.0
+margin_top = 6.0
+margin_right = 936.0
+margin_bottom = 139.0
+theme = ExtResource( 5 )
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" type="Label" parent="Hint"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -126.0
+margin_top = -66.5
+margin_right = 129.0
+margin_bottom = 66.5
+text = "Recuerda:
+- Busca elementos toxicos
+- Corta la electricidad
+- Recoge tus pertenencias"
+valign = 1
+autowrap = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ActivityTimer" to="." method="_on_ActivityTimer_timeout"]
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="SecondFloorbtn" to="." method="_on_SecondFloorbtn_pressed"]
 [connection signal="pressed" from="PausePopup/CenterContainer/VBoxContainer/ResumeGame" to="." method="_on_ResumeGame_pressed"]
