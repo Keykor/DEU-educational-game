@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/pass_Second_floor.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Intro.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Estante.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Sounds/Menu.wav" type="AudioStream" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
@@ -408,7 +409,6 @@ rect_min_size = Vector2( 200, 0 )
 text = "$$end game"
 
 [node name="Intro" parent="." instance=ExtResource( 9 )]
-visible = false
 
 [node name="Hint" type="Panel" parent="."]
 visible = false
@@ -434,6 +434,13 @@ text = "Recuerda:
 - Recoge tus pertenencias"
 valign = 1
 autowrap = true
+
+[node name="Radio" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="Sounds" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ActivityTimer" to="." method="_on_ActivityTimer_timeout"]

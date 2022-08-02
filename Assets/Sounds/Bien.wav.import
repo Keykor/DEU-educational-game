@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bien.wav-66bfb0e0bf39e610974cf9ba4c253ebd.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Bien.wav"
+dest_files=[ "res://.import/Bien.wav-66bfb0e0bf39e610974cf9ba4c253ebd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

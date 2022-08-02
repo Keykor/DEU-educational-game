@@ -35,6 +35,8 @@ func start_game():
 	$Estante.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
+	$Radio.stream = load("res://Assets/Sounds/Juego.wav")
+	$Radio.play()
 
 func get_actual_time():
 	return $Timer/Label.text
@@ -63,8 +65,10 @@ func _on_Timer_timeout():
 	$Inventory.reset()
 
 	var scene_name = "GameLose"
+	$Radio.stream = load("res://Assets/Sounds/Final_malo.wav")
 	if (response["win"]):
 		scene_name = "GameWin"
+		$Radio.stream = load("res://Assets/Sounds/Final_bueno.wav")
 
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
 	next_scene.init(self.translate_mistakes(response["mistakes"]))
@@ -73,6 +77,7 @@ func _on_Timer_timeout():
 	active_scene.queue_free()
 	active_scene = next_scene
 	print("Game ended")
+	$Radio.play()
 	pass
 
 func translate_mistakes(mistakes):
@@ -98,6 +103,11 @@ func _on_change_scene(scene_name):
 		$SecondFloorbtn.hide()
 	else:
 		$SecondFloorbtn.show()
+	if scene_name == "MainMenu":
+		$Radio.stream = load("res://Assets/Sounds/Menu.wav")
+		$Radio.play()	
+	play_sound("Pasos.wav")
+	
 
 func _on_terminar_preparativos():
 	$EndGamePopup.show()
@@ -198,6 +208,8 @@ func _on_Salir_pressed(scene_name):
 	$PausePopup.hide()
 	clear_persistence()
 	_on_change_scene(scene_name)
+	$Radio.stream = load("res://Assets/Sounds/Menu.wav")
+	$Radio.play()
 
 func _on_Back_pressed():
 	$SettingsPopup.hide()
@@ -244,3 +256,7 @@ func _on_FirstFloorbtn_pressed():
 	$SecondFloorbtn.show()
 	$FirstFloorbtn.hide()
 	$Estante.hide()
+
+func play_sound(name):
+	$Sounds.stream = load("res://Assets/Sounds/" + name)
+	$Sounds.play()

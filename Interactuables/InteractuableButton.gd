@@ -27,3 +27,4 @@ func _on_InteractuableTextureButton_pressed():
 	hide()
 	var controller = get_parent().get_parent()
 	controller.save_item(item_name)
+	controller.play_sound("Agarrar.wav")

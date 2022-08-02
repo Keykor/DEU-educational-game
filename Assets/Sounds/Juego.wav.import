@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Juego.wav-cd05f2fca5c40a86d4043522dfd1e693.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Juego.wav"
+dest_files=[ "res://.import/Juego.wav-cd05f2fca5c40a86d4043522dfd1e693.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
