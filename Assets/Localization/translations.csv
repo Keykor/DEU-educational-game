@@ -19,16 +19,20 @@ $$medium,Medium,Medio
 $$hard,Hard,Difícil
 $$guide 1,"- Press the items to interact with them
 
-- Press the arrows to move between scenes","- Presione los objetos para interactuar con ellos
+- Press the arrows to move between rooms
 
-- Presione las flechas para moverse de escenario"
+- Press the items on the shelf to place them","- Presione los objetos para interactuar con ellos
+
+- Presione las flechas para moverse de habitación
+
+- Presione los items del estante para colocarlos"
 $$back,Back,Volver al menú
 $$english,English,Inglés
 $$spanish,Spanish,Español
 $$intro continue,Press to continue…,Presione para continuar...
 $$news dialog,"Heavy rains are approaching the creek and flooding is imminent.
-It is recommended that you follow prevention protocols.  ","Lluvias fuertes se acercan al arroyo y la inundación es inminente.
-Se recomienda que sigan los protocolos de prevención. "
+It is recommended that you follow prevention protocols.","Lluvias fuertes se acercan al arroyo y la inundación es inminente.
+Se recomienda que sigan los protocolos de prevención"
 $$news title,FLOOD RISK!,¡RIESGO DE INUNDACIÓN!
 $$news extended title,"BREAKING NEWS
 HEAVY RAINS
@@ -46,6 +50,7 @@ $$instruction 3,- Grab your first aid kit,- Busca tu botiquín de primeros auxil
 $$instruction 4,- Take care of your documents,- Busca tus documentos
 $$instruction 5,- Find your flashlight,- Encuentra tu linterna
 $$instruction 6,- Pick up your money,- Junta tu dinero
+$$instruction 7,- Stay away from the lower levels,
 $$protocol,Handbook with protocols:,Manual con protocolo:
 $$play intro,Replay intro,Reproducir introducción
 $$outline,Outline items,Remarcar objetos
