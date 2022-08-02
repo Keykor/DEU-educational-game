@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var active_scene = $MainMenu
-var game_time = 30.0
+var game_time = 144.0
 var language = "$$spanish"
 var electric_switch = true
 var saved_scenes = []
@@ -27,12 +27,12 @@ func _process(delta):
 	pass
 
 func start_game():
+	electric_switch = true
 	$Inventory.show()
 	$Timer.show()
 	$ActivityTimer.start(activity_time)
 	$Pause.show()
 	$FirstFloorbtn.show()
-	$Estante.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
 	$Radio.stream = load("res://Assets/Sounds/Juego.wav")
@@ -47,7 +47,6 @@ func stop_game():
 	$SecondFloorbtn.hide()
 	$FirstFloorbtn.hide()
 	$Hint.hide()
-	$Estante.hide()
 	$ActivityTimer.stop()
 	$Timer.hide()
 	$Timer.end_game()
@@ -93,9 +92,10 @@ func _on_change_scene(scene_name):
 	var next_scene = load("res://Scenes/" + scene_name + ".tscn").instance()
 	add_child(next_scene)
 	move_child(next_scene,0)
-	next_scene.connect("change_scene", self, "_on_change_scene")
 	if scene_name == "GameSecondFloor":
 		next_scene.connect("terminar_preparativos", self, "_on_terminar_preparativos")
+	else:
+		next_scene.connect("change_scene", self, "_on_change_scene")
 	active_scene.queue_free()
 	active_scene = next_scene
 	load_scene(active_scene.name)
@@ -178,8 +178,15 @@ func load_scene(scene_name):
 		new_object.rect_position.y = node_data["pos_y"]
 		new_object.rect_size.x = node_data["size_x"]
 		new_object.rect_size.y = node_data["size_y"]
-		if node_data["is_visible"] == false:
-			new_object.hide()
+		
+		if node_data.has("is_visible"):
+			if node_data["is_visible"] == false:
+				new_object.hide()
+		
+		if node_data.has("collected"):
+			if node_data["collected"] == true:
+				new_object.has_been_collected()
+		
 	save_game.close()
 
 func clear_persistence():
@@ -204,7 +211,6 @@ func _on_Salir_pressed(scene_name):
 	$Hint.hide()
 	$Timer.hide()
 	$Timer.stop()
-	$Estante.hide()
 	$SecondFloorbtn.hide()
 	$FirstFloorbtn.hide()
 	$Pause.hide()
@@ -227,7 +233,6 @@ func _on_SecondFloorbtn_pressed():
 	_on_change_scene("GameSecondFloor")
 	$SecondFloorbtn.hide()
 	$FirstFloorbtn.show()
-	$Estante.show()
 
 func _on_ContinueGame_pressed():
 	$EndGamePopup.hide()
@@ -258,8 +263,10 @@ func _on_FirstFloorbtn_pressed():
 	_on_change_scene("GameLoundryRoom")
 	$SecondFloorbtn.show()
 	$FirstFloorbtn.hide()
-	$Estante.hide()
 
 func play_sound(name):
 	$Sounds.stream = load("res://Assets/Sounds/" + name)
 	$Sounds.play()
+	
+func move_item_from_person_to_shelf(item_name):
+	return $Inventory.move_item_from_person_to_shelf(item_name)

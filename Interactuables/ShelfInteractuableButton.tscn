@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interactuables/ShelfButton.gd" type="Script" id=1]
+[ext_resource path="res://Interactuables/GrayFilter.tres" type="Material" id=2]
+
+[node name="ShelfInteractuableButton" type="TextureButton" groups=["Persist"]]
+material = ExtResource( 2 )
+margin_right = 40.0
+margin_bottom = 40.0
+expand = true
+stretch_mode = 5
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="." to="." method="_on_ShelfInteractuableButton_pressed"]

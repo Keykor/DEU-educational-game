@@ -4,9 +4,9 @@ signal change_scene(scene_name)
 signal change_difficulty(difficulty)
 
 var difficulties = {
-	"$$easy": 30.0,
-	"$$medium": 20.0,
-	"$$hard": 10.0
+	"$$easy": 144.0,
+	"$$medium": 96.0,
+	"$$hard": 48.0
 }
 
 var languages = {

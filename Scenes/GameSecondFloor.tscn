@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/game_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/GameSecondFloor.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Backgrounds/secondfloor.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/cif.png" type="Texture" id=4]
+[ext_resource path="res://Interactuables/ShelfInteractuableButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/radio.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/female_dni.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/flashlight.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/money.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/male_dni.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/medikit.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/raid.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/water_bottle.png" type="Texture" id=13]
 
 [node name="SecondFloor" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 1026.0
+margin_left = -1.0
+margin_right = 1025.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 
@@ -20,4 +31,78 @@ margin_bottom = 237.0
 theme = ExtResource( 1 )
 text = "$$finish preparations"
 
+[node name="cif" parent="." instance=ExtResource( 5 )]
+margin_left = 204.0
+margin_top = 102.0
+margin_right = 279.0
+margin_bottom = 177.0
+texture_normal = ExtResource( 4 )
+item_name = "cif"
+
+[node name="male_dni" parent="." instance=ExtResource( 5 )]
+margin_left = 206.0
+margin_top = 263.0
+margin_right = 267.0
+margin_bottom = 324.0
+texture_normal = ExtResource( 10 )
+item_name = "male_dni"
+
+[node name="medikit" parent="." instance=ExtResource( 5 )]
+margin_left = 337.0
+margin_top = 232.0
+margin_right = 424.0
+margin_bottom = 319.0
+texture_normal = ExtResource( 11 )
+item_name = "medikit"
+
+[node name="money" parent="." instance=ExtResource( 5 )]
+margin_left = 492.0
+margin_top = 259.0
+margin_right = 546.0
+margin_bottom = 313.0
+texture_normal = ExtResource( 9 )
+item_name = "money"
+
+[node name="radio" parent="." instance=ExtResource( 5 )]
+margin_left = 193.0
+margin_top = 354.0
+margin_right = 281.0
+margin_bottom = 442.0
+texture_normal = ExtResource( 6 )
+item_name = "radio"
+
+[node name="raid" parent="." instance=ExtResource( 5 )]
+margin_left = 343.0
+margin_top = 358.0
+margin_right = 429.0
+margin_bottom = 444.0
+texture_normal = ExtResource( 12 )
+item_name = "raid"
+
+[node name="water_bottle" parent="." instance=ExtResource( 5 )]
+margin_left = 486.0
+margin_top = 373.0
+margin_right = 556.0
+margin_bottom = 443.0
+texture_normal = ExtResource( 13 )
+item_name = "water_bottle"
+
+[node name="female_dni" parent="." instance=ExtResource( 5 )]
+margin_left = 346.0
+margin_top = 115.0
+margin_right = 407.0
+margin_bottom = 195.0
+texture_normal = ExtResource( 7 )
+item_name = "female_dni"
+
+[node name="flashlight" parent="." instance=ExtResource( 5 )]
+margin_left = 460.0
+margin_top = 120.0
+margin_right = 548.0
+margin_bottom = 208.0
+texture_normal = ExtResource( 8 )
+item_name = "flashlight"
+
 [connection signal="pressed" from="TerminarPreparativos" to="." method="_on_TerminarPreparativos_pressed"]
+
+[editable path="cif"]

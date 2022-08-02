@@ -66,8 +66,9 @@ align = 1
 valign = 1
 
 [node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 119.0
 margin_right = 250.0
-margin_bottom = 134.0
+margin_bottom = 119.0
 
 [node name="PlayButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
 margin_top = 135.0

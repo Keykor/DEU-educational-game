@@ -28,8 +28,8 @@ func set_game_time(new_game_time):
 
 func hide():
 	$ColorRect.hide()
-	$Label.hide()
+	find_node("Label").hide()
 	
 func show():
 	$ColorRect.show()
-	$Label.show()
+	find_node("Label").show()
