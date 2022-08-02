@@ -13,10 +13,10 @@ margin_bottom = 600.0
 texture = ExtResource( 3 )
 
 [node name="TerminarPreparativos" type="Button" parent="."]
-margin_left = 695.0
-margin_top = 253.0
-margin_right = 915.0
-margin_bottom = 312.0
+margin_left = 696.0
+margin_top = 178.0
+margin_right = 916.0
+margin_bottom = 237.0
 theme = ExtResource( 1 )
 text = "Terminar preparativos"
 

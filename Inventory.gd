@@ -22,7 +22,7 @@ func reset():
 
 
 func has_all_the_necessary_for_the_win():
-	var needed_items = ["water_bottle","money","female_dni","medikit"]
+	var needed_items = ["water_bottle","money","female_dni","medikit", "flashlight", "radio", "male_dni"]
 	var toxic_items = ["cif","raid"]
 	for item in items:
 		var i = needed_items.find(item.item_name)

@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 500.0
 texture = SubResource( 1 )
 expand = true
 
@@ -28,19 +28,19 @@ flat = true
 expand_icon = true
 
 [node name="Medikit" parent="." instance=ExtResource( 3 )]
-margin_left = 317.0
-margin_top = 433.0
-margin_right = 445.0
-margin_bottom = 533.0
+margin_left = 332.0
+margin_top = 329.0
+margin_right = 460.0
+margin_bottom = 429.0
 texture_normal = ExtResource( 6 )
 expand = false
 item_name = "medikit"
 
 [node name="Raid" parent="." instance=ExtResource( 3 )]
 margin_left = 274.0
-margin_top = 433.0
+margin_top = 329.0
 margin_right = 306.0
-margin_bottom = 539.0
+margin_bottom = 435.0
 texture_normal = ExtResource( 5 )
 expand = false
 item_name = "raid"

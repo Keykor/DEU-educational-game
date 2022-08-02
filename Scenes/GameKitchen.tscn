@@ -13,7 +13,7 @@ script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 500.0
 texture = ExtResource( 1 )
 expand = true
 
@@ -35,20 +35,20 @@ flat = true
 expand_icon = true
 
 [node name="WatterBottle" parent="." instance=ExtResource( 3 )]
-margin_left = 657.0
-margin_top = 208.0
-margin_right = 692.0
-margin_bottom = 309.0
+margin_left = 656.0
+margin_top = 152.0
+margin_right = 691.0
+margin_bottom = 253.0
 texture_normal = ExtResource( 7 )
 expand = false
 stretch_mode = 2
 item_name = "water_bottle"
 
 [node name="Cif" parent="." instance=ExtResource( 3 )]
-margin_left = 489.0
-margin_top = 207.0
-margin_right = 528.0
-margin_bottom = 307.0
+margin_left = 499.0
+margin_top = 154.0
+margin_right = 533.0
+margin_bottom = 254.0
 texture_normal = ExtResource( 5 )
 expand = false
 item_name = "cif"

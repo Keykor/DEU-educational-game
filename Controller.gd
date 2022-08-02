@@ -118,6 +118,9 @@ func save_item(item_name):
 func evaluation():
 	var mistakes = []
 	
+	if (active_scene.name != "SecondFloor"):
+		mistakes.append("No subiste al segundo piso de la casa")
+	
 	if (electric_switch):
 		mistakes.append("$$mistake energy")
 		
