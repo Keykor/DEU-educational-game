@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bedroom.jpg-de11b3425468e934be1053bfa8708797.stex"
+path="res://.import/secondfloor.png-7c7b0cba5ea41eb04161ed2da7e39187.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Bedroom.jpg"
-dest_files=[ "res://.import/Bedroom.jpg-de11b3425468e934be1053bfa8708797.stex" ]
+source_file="res://Assets/Backgrounds/secondfloor.png"
+dest_files=[ "res://.import/secondfloor.png-7c7b0cba5ea41eb04161ed2da7e39187.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Living.jpg-217f12ea4aae99d5da93df70d923f9d7.stex"
+path="res://.import/laundryroom.png-2dcbc60600aadce32b97fd57fefb88b3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Living.jpg"
-dest_files=[ "res://.import/Living.jpg-217f12ea4aae99d5da93df70d923f9d7.stex" ]
+source_file="res://Assets/Backgrounds/laundryroom.png"
+dest_files=[ "res://.import/laundryroom.png-2dcbc60600aadce32b97fd57fefb88b3.stex" ]
 
 [params]
 

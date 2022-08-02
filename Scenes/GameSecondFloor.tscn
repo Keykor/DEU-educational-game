@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/game_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/GameSecondFloor.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Backgrounds/secondfloor.png" type="Texture" id=3]
+
+[node name="SecondFloor" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1026.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+
+[node name="TerminarPreparativos" type="Button" parent="."]
+margin_left = 695.0
+margin_top = 253.0
+margin_right = 915.0
+margin_bottom = 312.0
+theme = ExtResource( 1 )
+text = "Terminar preparativos"
+
+[connection signal="pressed" from="TerminarPreparativos" to="." method="_on_TerminarPreparativos_pressed"]

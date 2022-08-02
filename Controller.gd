@@ -14,6 +14,7 @@ func _ready():
 	$Inventory.hide()
 	$Timer.hide()
 	$Pause.hide()
+	$FirstFloorbtn.hide()
 	$PausePopup.hide()
 	$SecondFloorbtn.hide()
 	$SettingsPopup.hide()
@@ -30,7 +31,8 @@ func start_game():
 	$Timer.show()
 	$ActivityTimer.start(activity_time)
 	$Pause.show()
-	$SecondFloorbtn.show()
+	$FirstFloorbtn.show()
+	$Estante.show()
 	$Timer.set_game_time(game_time)
 	$Timer.start_game()
 
@@ -41,7 +43,9 @@ func stop_game():
 	$Pause.hide()
 	$Inventory.hide()
 	$SecondFloorbtn.hide()
+	$FirstFloorbtn.hide()
 	$Hint.hide()
+	$Estante.hide()
 	$ActivityTimer.stop()
 	$Timer.hide()
 	$Timer.end_game()
@@ -85,9 +89,18 @@ func _on_change_scene(scene_name):
 	add_child(next_scene)
 	move_child(next_scene,0)
 	next_scene.connect("change_scene", self, "_on_change_scene")
+	if scene_name == "GameSecondFloor":
+		next_scene.connect("terminar_preparativos", self, "_on_terminar_preparativos")
 	active_scene.queue_free()
 	active_scene = next_scene
 	load_scene(active_scene.name)
+	if scene_name != "GameLoundryRoom":
+		$SecondFloorbtn.hide()
+	else:
+		$SecondFloorbtn.show()
+
+func _on_terminar_preparativos():
+	$EndGamePopup.show()
 
 func save_item(item_name):
 	$Inventory.save_item(item_name)
@@ -178,7 +191,9 @@ func _on_Salir_pressed(scene_name):
 	$Hint.hide()
 	$Timer.hide()
 	$Timer.stop()
+	$Estante.hide()
 	$SecondFloorbtn.hide()
+	$FirstFloorbtn.hide()
 	$Pause.hide()
 	$PausePopup.hide()
 	clear_persistence()
@@ -194,7 +209,10 @@ func _on_Close_pressed():
 	$InGameSettingsPopup.hide()
 
 func _on_SecondFloorbtn_pressed():
-	$EndGamePopup.show()
+	_on_change_scene("GameSecondFloor")
+	$SecondFloorbtn.hide()
+	$FirstFloorbtn.show()
+	$Estante.show()
 
 func _on_ContinueGame_pressed():
 	$EndGamePopup.hide()
@@ -217,6 +235,12 @@ func _on_ActivityTimer_timeout():
 	$Hint.show()
 
 func _input(event):
-	if event is InputEventMouse and event.is_pressed():
+	if event is InputEventMouse and event.is_pressed() and not $Timer.is_stopped():
 		$ActivityTimer.start(activity_time)
 		$Hint.hide()
+
+func _on_FirstFloorbtn_pressed():
+	_on_change_scene("GameLoundryRoom")
+	$SecondFloorbtn.show()
+	$FirstFloorbtn.hide()
+	$Estante.hide()

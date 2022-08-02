@@ -1,11 +1,14 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Backgrounds/Bathroom.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/GameBathroom.gd" type="Script" id=2]
 [ext_resource path="res://Interactuables/InteractuableButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/pass_L.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/raid.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/medikit.png" type="Texture" id=6]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/bathroom.png-ee8d4e8fd55cab28515b48313828be81.stex"
 
 [node name="Baño" type="Node2D"]
 script = ExtResource( 2 )
@@ -13,7 +16,7 @@ script = ExtResource( 2 )
 [node name="Background" type="TextureRect" parent="."]
 margin_right = 1024.0
 margin_bottom = 600.0
-texture = ExtResource( 1 )
+texture = SubResource( 1 )
 expand = true
 
 [node name="PreviousRoomButton" type="Button" parent="."]
@@ -25,23 +28,21 @@ flat = true
 expand_icon = true
 
 [node name="Medikit" parent="." instance=ExtResource( 3 )]
-margin_left = 835.0
-margin_top = 226.0
-margin_right = 963.0
-margin_bottom = 332.0
+margin_left = 317.0
+margin_top = 433.0
+margin_right = 445.0
+margin_bottom = 533.0
 texture_normal = ExtResource( 6 )
 expand = false
 item_name = "medikit"
 
 [node name="Raid" parent="." instance=ExtResource( 3 )]
-margin_left = 131.0
-margin_top = 326.0
-margin_right = 163.0
-margin_bottom = 432.0
+margin_left = 274.0
+margin_top = 433.0
+margin_right = 306.0
+margin_bottom = 539.0
 texture_normal = ExtResource( 5 )
 expand = false
 item_name = "raid"
 
 [connection signal="pressed" from="PreviousRoomButton" to="." method="_on_button_pressed" binds= [ "GameBedroom" ]]
-[connection signal="pressed" from="Medikit" to="Medikit" method="_on_InteractuableTextureButton_pressed" binds= [ "medikit" ]]
-[connection signal="pressed" from="Raid" to="Raid" method="_on_InteractuableTextureButton_pressed" binds= [ "raid" ]]
