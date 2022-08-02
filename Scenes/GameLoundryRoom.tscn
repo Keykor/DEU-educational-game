@@ -36,11 +36,10 @@ stretch_mode = 3
 script = ExtResource( 4 )
 
 [node name="Linterna" parent="." instance=ExtResource( 6 )]
-margin_left = 813.0
-margin_top = 120.0
-margin_right = 918.0
-margin_bottom = 226.0
-rect_rotation = 40.0
+margin_left = 808.0
+margin_top = 149.0
+margin_right = 913.0
+margin_bottom = 255.0
 texture_normal = ExtResource( 7 )
 item_name = "flashlight"
 

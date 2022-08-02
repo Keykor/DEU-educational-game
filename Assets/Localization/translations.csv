@@ -49,3 +49,7 @@ $$instruction 6,- Pick up your money,- Junta tu dinero
 $$protocol,Handbook with protocol:,Manual con protocolo: 
 $$play intro,Replay intro,Reproducir introducción
 $$outline,Outline items,Remarcar objetos
+$$character_intro,I need to prepare the house before the storm arrives!,¡Tengo que preparar la casa antes del temporal!
+$$exit game,Exit game,Salir del juego
+$$finish preparations,Wait for the storm,Esperar a la tormenta
+$$mistake stay downstairs,You didn’t go upstairs,No subiste al segundo piso de la casa

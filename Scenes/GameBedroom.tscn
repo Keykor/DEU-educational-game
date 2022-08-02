@@ -38,10 +38,10 @@ flat = true
 expand_icon = true
 
 [node name="MaleDNI" parent="." instance=ExtResource( 5 )]
-margin_left = 848.0
-margin_top = 380.0
-margin_right = 901.0
-margin_bottom = 406.0
+margin_left = 823.0
+margin_top = 326.0
+margin_right = 859.0
+margin_bottom = 343.0
 texture_normal = ExtResource( 1 )
 item_name = "male_dni"
 

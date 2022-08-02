@@ -119,7 +119,7 @@ func evaluation():
 	var mistakes = []
 	
 	if (active_scene.name != "SecondFloor"):
-		mistakes.append("No subiste al segundo piso de la casa")
+		mistakes.append("$$mistake stay downstairs")
 	
 	if (electric_switch):
 		mistakes.append("$$mistake energy")
@@ -128,7 +128,7 @@ func evaluation():
 	
 	if (!response["needed_items"]):
 		mistakes.append("$$mistake important items")
-		
+
 	if (!response["toxic_items"]):
 		mistakes.append("$$mistake toxic items")
 		

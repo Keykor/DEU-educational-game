@@ -21,3 +21,7 @@ func _on_SettingsButton_pressed():
 
 func _on_PlayIntroButton_pressed():
 	get_parent().play_intro()
+
+
+func _on_ExitButton_pressed():
+	get_tree().quit()
