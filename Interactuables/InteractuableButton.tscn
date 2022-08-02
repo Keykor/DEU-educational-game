@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Interactuables/InteractuableButton.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Smile.png" type="Texture" id=2]
-[ext_resource path="res://Interactuables/OutlineShader.tres" type="Material" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "IDLE"
@@ -52,7 +51,6 @@ tracks/0/keys = {
 }
 
 [node name="InteractuableTextureButton" type="TextureButton" groups=["Persist"]]
-material = ExtResource( 3 )
 margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 2 )

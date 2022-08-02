@@ -5,11 +5,12 @@ export (String) var item_name = ""
 func _ready():
 	var controller = get_parent().get_parent()
 	
-	if (!controller.outline_items):
+	if (not controller.outline_items):
 		$AnimationPlayer.play("IDLE")
-		set_material(null)
 	else:
 		$AnimationPlayer.play("MOVE")
+		if (not OS.has_feature("HTML5")) :
+			set_material(load("res://Interactuables/OutlineShader.tres"))
 
 func save():
 	var save_dict = {
