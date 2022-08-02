@@ -164,16 +164,16 @@ color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
 
 [node name="Backpanel" type="Panel" parent="SettingsPopup"]
 margin_left = 271.0
-margin_top = 153.0
+margin_top = 95.0
 margin_right = 751.0
-margin_bottom = 453.0
+margin_bottom = 522.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Title" type="Label" parent="SettingsPopup"]
 margin_left = 287.0
-margin_top = 154.0
+margin_top = 96.0
 margin_right = 737.0
-margin_bottom = 239.0
+margin_bottom = 181.0
 rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -184,17 +184,17 @@ valign = 1
 
 [node name="Back" type="Button" parent="SettingsPopup"]
 margin_left = 462.0
-margin_top = 393.0
+margin_top = 471.0
 margin_right = 562.0
-margin_bottom = 433.0
+margin_bottom = 511.0
 theme = ExtResource( 5 )
 text = "$$back"
 
 [node name="Panel" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
-margin_top = 238.0
+margin_top = 228.0
 margin_right = 737.0
-margin_bottom = 278.0
+margin_bottom = 268.0
 
 [node name="Difficulty" type="Label" parent="SettingsPopup/Panel"]
 margin_left = 17.0
@@ -205,9 +205,9 @@ theme = ExtResource( 5 )
 text = "$$difficulty"
 
 [node name="DifficultyMenuButton" type="MenuButton" parent="SettingsPopup/Panel/Difficulty"]
-margin_left = 366.0
+margin_left = 363.0
 margin_top = -1.0
-margin_right = 411.0
+margin_right = 421.0
 margin_bottom = 30.0
 focus_mode = 2
 theme = ExtResource( 5 )
@@ -215,9 +215,9 @@ text = "$$dif"
 
 [node name="Panel2" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
-margin_top = 286.0
+margin_top = 276.0
 margin_right = 737.0
-margin_bottom = 326.0
+margin_bottom = 316.0
 
 [node name="Language" type="Label" parent="SettingsPopup/Panel2"]
 margin_left = 17.0
@@ -228,9 +228,9 @@ theme = ExtResource( 5 )
 text = "$$language"
 
 [node name="LanguageMenuButton" type="MenuButton" parent="SettingsPopup/Panel2/Language"]
-margin_left = 366.0
+margin_left = 357.0
 margin_top = -1.0
-margin_right = 411.0
+margin_right = 423.0
 margin_bottom = 30.0
 focus_mode = 2
 theme = ExtResource( 5 )
@@ -238,9 +238,10 @@ text = "$$lang"
 
 [node name="Panel3" type="Panel" parent="SettingsPopup"]
 margin_left = 287.0
-margin_top = 334.0
+margin_top = 180.0
 margin_right = 737.0
-margin_bottom = 374.0
+margin_bottom = 220.0
+rect_pivot_offset = Vector2( 222, 34 )
 
 [node name="Outline" type="Label" parent="SettingsPopup/Panel3"]
 margin_left = 17.0
@@ -256,6 +257,75 @@ margin_top = -3.0
 margin_right = 429.0
 margin_bottom = 31.0
 
+[node name="Panel4" type="Panel" parent="SettingsPopup"]
+margin_left = 287.0
+margin_top = 325.0
+margin_right = 737.0
+margin_bottom = 365.0
+rect_pivot_offset = Vector2( 222, 34 )
+
+[node name="Music" type="Label" parent="SettingsPopup/Panel4"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$music"
+
+[node name="MusicHSlider" type="HSlider" parent="SettingsPopup/Panel4"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
+
+[node name="Panel5" type="Panel" parent="SettingsPopup"]
+margin_left = 287.0
+margin_top = 374.0
+margin_right = 737.0
+margin_bottom = 414.0
+rect_pivot_offset = Vector2( 40, 67 )
+
+[node name="Sounds" type="Label" parent="SettingsPopup/Panel5"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$sounds"
+
+[node name="SoundsHSlider" type="HSlider" parent="SettingsPopup/Panel5"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
+
+[node name="Panel6" type="Panel" parent="SettingsPopup"]
+margin_left = 287.0
+margin_top = 421.0
+margin_right = 737.0
+margin_bottom = 461.0
+rect_pivot_offset = Vector2( 222, 34 )
+
+[node name="Voices" type="Label" parent="SettingsPopup/Panel6"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$voices"
+
+[node name="VoicesHSlider" type="HSlider" parent="SettingsPopup/Panel6"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
+
 [node name="InGameSettingsPopup" type="Popup" parent="."]
 pause_mode = 2
 margin_right = 1022.0
@@ -270,16 +340,16 @@ color = Color( 0.168627, 0.168627, 0.168627, 0.6 )
 
 [node name="Backpanel" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 271.0
-margin_top = 153.0
+margin_top = 113.0
 margin_right = 751.0
-margin_bottom = 453.0
+margin_bottom = 498.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Title" type="Label" parent="InGameSettingsPopup"]
 margin_left = 287.0
-margin_top = 154.0
+margin_top = 114.0
 margin_right = 737.0
-margin_bottom = 239.0
+margin_bottom = 199.0
 rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -290,17 +360,17 @@ valign = 1
 
 [node name="Close" type="Button" parent="InGameSettingsPopup"]
 margin_left = 462.0
-margin_top = 393.0
+margin_top = 446.0
 margin_right = 562.0
-margin_bottom = 433.0
+margin_bottom = 486.0
 theme = ExtResource( 5 )
 text = "$$close"
 
 [node name="Panel2" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 287.0
-margin_top = 286.0
+margin_top = 247.0
 margin_right = 737.0
-margin_bottom = 326.0
+margin_bottom = 287.0
 
 [node name="Language" type="Label" parent="InGameSettingsPopup/Panel2"]
 margin_left = 17.0
@@ -321,9 +391,9 @@ text = "$$lang"
 
 [node name="Panel3" type="Panel" parent="InGameSettingsPopup"]
 margin_left = 287.0
-margin_top = 334.0
+margin_top = 200.0
 margin_right = 737.0
-margin_bottom = 374.0
+margin_bottom = 240.0
 
 [node name="Outline" type="Label" parent="InGameSettingsPopup/Panel3"]
 margin_left = 17.0
@@ -338,6 +408,75 @@ margin_left = 363.0
 margin_top = -3.0
 margin_right = 429.0
 margin_bottom = 31.0
+
+[node name="Panel4" type="Panel" parent="InGameSettingsPopup"]
+margin_left = 287.0
+margin_top = 296.0
+margin_right = 737.0
+margin_bottom = 336.0
+rect_pivot_offset = Vector2( 222, 34 )
+
+[node name="Music" type="Label" parent="InGameSettingsPopup/Panel4"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$music"
+
+[node name="MusicHSlider" type="HSlider" parent="InGameSettingsPopup/Panel4"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
+
+[node name="Panel5" type="Panel" parent="InGameSettingsPopup"]
+margin_left = 287.0
+margin_top = 345.0
+margin_right = 737.0
+margin_bottom = 385.0
+rect_pivot_offset = Vector2( 40, 67 )
+
+[node name="Sounds" type="Label" parent="InGameSettingsPopup/Panel5"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$sounds"
+
+[node name="SoundsHSlider" type="HSlider" parent="InGameSettingsPopup/Panel5"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
+
+[node name="Panel6" type="Panel" parent="InGameSettingsPopup"]
+margin_left = 287.0
+margin_top = 392.0
+margin_right = 737.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( 222, 34 )
+
+[node name="Voices" type="Label" parent="InGameSettingsPopup/Panel6"]
+margin_left = 17.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 35.0
+theme = ExtResource( 5 )
+text = "$$voices"
+
+[node name="VoicesHSlider" type="HSlider" parent="InGameSettingsPopup/Panel6"]
+margin_left = 229.0
+margin_top = 4.0
+margin_right = 442.0
+margin_bottom = 35.0
+min_value = -80.0
+max_value = 0.0
 
 [node name="EndGamePopup" type="Popup" parent="."]
 pause_mode = 2
@@ -428,8 +567,10 @@ autowrap = true
 pause_mode = 2
 stream = ExtResource( 11 )
 autoplay = true
+bus = "Radio"
 
 [node name="Sounds" type="AudioStreamPlayer" parent="."]
+bus = "Sounds"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ActivityTimer" to="." method="_on_ActivityTimer_timeout"]
@@ -442,9 +583,15 @@ autoplay = true
 [connection signal="about_to_show" from="SettingsPopup" to="SettingsPopup" method="_on_Settings_about_to_show"]
 [connection signal="pressed" from="SettingsPopup/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="SettingsPopup/Panel3/Outline/CheckButton" to="SettingsPopup" method="_on_CheckButton_pressed"]
+[connection signal="value_changed" from="SettingsPopup/Panel4/MusicHSlider" to="SettingsPopup" method="_on_MusicHSlider_value_changed"]
+[connection signal="value_changed" from="SettingsPopup/Panel5/SoundsHSlider" to="SettingsPopup" method="_on_SoundsHSlider_value_changed"]
+[connection signal="value_changed" from="SettingsPopup/Panel6/VoicesHSlider" to="SettingsPopup" method="_on_VoicesHSlider_value_changed"]
 [connection signal="about_to_show" from="InGameSettingsPopup" to="InGameSettingsPopup" method="_on_InGameSettings_about_to_show"]
 [connection signal="pressed" from="InGameSettingsPopup/Close" to="." method="_on_Close_pressed"]
 [connection signal="toggled" from="InGameSettingsPopup/Panel2/Language/LanguageMenuButton" to="SettingsPopup" method="_on_OutlineMenuButton_toggled"]
 [connection signal="pressed" from="InGameSettingsPopup/Panel3/Outline/CheckButton" to="InGameSettingsPopup" method="_on_CheckButton_pressed"]
+[connection signal="value_changed" from="InGameSettingsPopup/Panel4/MusicHSlider" to="SettingsPopup" method="_on_MusicHSlider_value_changed"]
+[connection signal="value_changed" from="InGameSettingsPopup/Panel5/SoundsHSlider" to="SettingsPopup" method="_on_SoundsHSlider_value_changed"]
+[connection signal="value_changed" from="InGameSettingsPopup/Panel6/VoicesHSlider" to="SettingsPopup" method="_on_VoicesHSlider_value_changed"]
 [connection signal="pressed" from="EndGamePopup/HBoxContainer/ContinueGame" to="." method="_on_ContinueGame_pressed"]
 [connection signal="pressed" from="EndGamePopup/HBoxContainer/EndGame" to="." method="_on_EndGame_pressed"]

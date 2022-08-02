@@ -7,6 +7,9 @@ var electric_switch = true
 var saved_scenes = []
 var outline_items = false
 var activity_time = 5
+var music_volume = 0
+var sounds_volume = 0
+var voices_volume = 0
 
 func _ready():
 	OS.window_maximized = true
