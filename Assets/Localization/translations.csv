@@ -50,7 +50,7 @@ $$instruction 3,- Grab your first aid kit,- Busca tu botiquín de primeros auxil
 $$instruction 4,- Take care of your documents,- Busca tus documentos
 $$instruction 5,- Find your flashlight,- Encuentra tu linterna
 $$instruction 6,- Pick up your money,- Junta tu dinero
-$$instruction 7,- Stay away from the lower levels,
+$$instruction 7,- Stay away from the lower levels,- Aléjate de los niveles inferiores
 $$protocol,Handbook with protocols:,Manual con protocolo:
 $$play intro,Replay intro,Reproducir introducción
 $$outline,Outline items,Remarcar objetos

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Controller.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Settings.gd" type="Script" id=7]
 [ext_resource path="res://Assets/pass_Second_floor.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Intro.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PersistManager.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Sounds/Menu.wav" type="AudioStream" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -571,6 +572,9 @@ bus = "Radio"
 
 [node name="Sounds" type="AudioStreamPlayer" parent="."]
 bus = "Sounds"
+
+[node name="PersistManager" type="Node" parent="."]
+script = ExtResource( 10 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ActivityTimer" to="." method="_on_ActivityTimer_timeout"]
