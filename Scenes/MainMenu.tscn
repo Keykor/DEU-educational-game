@@ -50,9 +50,9 @@ margin_bottom = 299.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer"]
 margin_left = 387.0
-margin_top = 106.0
+margin_top = 98.0
 margin_right = 637.0
-margin_bottom = 491.0
+margin_bottom = 499.0
 custom_constants/separation = 16
 
 [node name="Title" type="Label" parent="TextureRect/CenterContainer/VBoxContainer"]
@@ -65,46 +65,50 @@ text = "$$title"
 align = 1
 valign = 1
 
-[node name="PlayButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 119.0
+[node name="Control" type="Control" parent="TextureRect/CenterContainer/VBoxContainer"]
 margin_right = 250.0
-margin_bottom = 150.0
+margin_bottom = 134.0
+
+[node name="PlayButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_top = 135.0
+margin_right = 250.0
+margin_bottom = 166.0
 theme = ExtResource( 3 )
 text = "$$start game"
 
 [node name="GuideButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 166.0
+margin_top = 182.0
 margin_right = 250.0
-margin_bottom = 197.0
+margin_bottom = 213.0
 theme = ExtResource( 3 )
 text = "$$guide"
 script = SubResource( 3 )
 
 [node name="GameInstructionsbtn" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 213.0
+margin_top = 229.0
 margin_right = 250.0
-margin_bottom = 244.0
+margin_bottom = 260.0
 theme = ExtResource( 3 )
 text = "$$instructions"
 
 [node name="SettingsButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 260.0
+margin_top = 276.0
 margin_right = 250.0
-margin_bottom = 291.0
+margin_bottom = 307.0
 theme = ExtResource( 3 )
 text = "$$settings"
 
 [node name="PlayIntroButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 307.0
+margin_top = 323.0
 margin_right = 250.0
-margin_bottom = 338.0
+margin_bottom = 354.0
 theme = ExtResource( 3 )
 text = "$$play intro"
 
 [node name="ExitButton" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
-margin_top = 354.0
+margin_top = 370.0
 margin_right = 250.0
-margin_bottom = 385.0
+margin_bottom = 401.0
 theme = ExtResource( 3 )
 text = "$$exit game"
 

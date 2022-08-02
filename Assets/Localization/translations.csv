@@ -1,5 +1,5 @@
 keys,en_US,es_AR
-$$title,Game's Title,Título del juego
+$$title,Risk of Rain,Riesgo de Lluvia
 $$start game,Play,Empezar
 $$guide,How to play,Cómo jugar
 $$settings,Settings,Configuración
@@ -32,7 +32,7 @@ Se recomienda que sigan los protocolos de prevención. "
 $$news title,FLOOD RISK!,¡RIESGO DE INUNDACIÓN!
 $$news extended title,"BREAKING NEWS
 HEAVY RAINS
-APROACHING","ÚLTIMO MOMENTO
+APPROACHING","ÚLTIMO MOMENTO
 SE APROXIMAN
 FUERTES LLUVIAS"
 $$mistake energy,You didn’t turn off the power,No cortaste la luz
@@ -53,3 +53,10 @@ $$character_intro,I need to prepare the house before the storm arrives!,¡Tengo 
 $$exit game,Exit game,Salir del juego
 $$finish preparations,Wait for the storm,Esperar a la tormenta
 $$mistake stay downstairs,You didn’t go upstairs,No subiste al segundo piso de la casa
+$$hints,"Remember:
+- Look out for toxic elements
+- Cut off the power
+- Pick up your belongings","Recuerda:
+- Busca elementos toxicos
+- Corta la electricidad
+- Recoge tus pertenencias"
