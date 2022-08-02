@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Sprites/female_dni.png" type="Texture" id=8]
 [ext_resource path="res://Interactuables/GrayFilter.tres" type="Material" id=9]
 
+
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
 corner_radius_top_left = 25

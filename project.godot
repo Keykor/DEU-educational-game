@@ -29,6 +29,10 @@ config/icon="res://icon.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[global]
+
+gles=false
+
 [input]
 
 Click={

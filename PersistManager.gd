@@ -23,6 +23,7 @@ func save_scene_ram(scene_name):
 		self.saved_scenes.append(scene_name)
 		
 	scenes_saved_data[scene_name] = []
+
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	for node in save_nodes:
 		var node_data = node.call("save")

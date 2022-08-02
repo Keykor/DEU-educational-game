@@ -4,11 +4,12 @@ export (String) var item_name = ""
 
 func _ready():
 	var controller = get_parent().get_parent()
-	if (controller.outline_items):
-		material.set_shader_param("color",Color(38,255,0,255))
+	
+	if (!controller.outline_items):
+		$AnimationPlayer.play("IDLE")
+		set_material(null)
 	else:
-		material.set_shader_param("color",Color(38,255,0,0))
-	pass
+		$AnimationPlayer.play("MOVE")
 
 func save():
 	var save_dict = {
