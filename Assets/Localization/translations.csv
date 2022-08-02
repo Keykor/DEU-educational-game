@@ -40,13 +40,13 @@ $$mistake important items,You didn’t collect all the important items,No agarra
 $$mistake toxic items,You didn’t collect all the toxic items,No agarraste todos los objetos tóxicos
 $$instructions,Instructions,Instrucciones
 $$game instructions,Game Instructions,Instrucciones de juego
-$$instruction 1,- Find the toxic items,- Busca los elementos toxicos
-$$instruction 2,- Make sure to turn off the house's power,- Asegurate de cortar la energia de la casa
-$$instruction 3,- Grab your first aid kit,- Busca tu botiquin de primerios auxilios
+$$instruction 1,- Find the toxic items,- Busca los elementos tóxicos
+$$instruction 2,- Make sure to turn off the house's power,- Asegúrate de cortar la energia de la casa
+$$instruction 3,- Grab your first aid kit,- Busca tu botiquín de primeros auxilios
 $$instruction 4,- Take care of your documents,- Busca tus documentos
 $$instruction 5,- Find your flashlight,- Encuentra tu linterna
 $$instruction 6,- Pick up your money,- Junta tu dinero
-$$protocol,Handbook with protocol:,Manual con protocolo: 
+$$protocol,Handbook with protocols:,Manual con protocolo:
 $$play intro,Replay intro,Reproducir introducción
 $$outline,Outline items,Remarcar objetos
 $$character_intro,I need to prepare the house before the storm arrives!,¡Tengo que preparar la casa antes del temporal!
@@ -57,6 +57,9 @@ $$hints,"Remember:
 - Look out for toxic elements
 - Cut off the power
 - Pick up your belongings","Recuerda:
-- Busca elementos toxicos
+- Busca elementos tóxicos
 - Corta la electricidad
 - Recoge tus pertenencias"
+$$music,Music,Música
+$$sounds,Sounds,Sonido
+$$voices,Voices,Voces
