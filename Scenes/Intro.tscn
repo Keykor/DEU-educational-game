@@ -227,6 +227,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "news_dialog_audio"
+} ]
+}
 
 [sub_resource type="Animation" id=8]
 resource_name = "person_talk"
@@ -362,6 +376,20 @@ tracks/10/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/11/type = "method"
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "person_intro_audio"
+} ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "placa_roja"
@@ -400,6 +428,20 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "news_extended_title_audio"
+} ]
 }
 
 [sub_resource type="DynamicFont" id=9]
@@ -457,7 +499,6 @@ align = 1
 valign = 1
 
 [node name="NewsPanel" type="Sprite" parent="Tv"]
-visible = false
 position = Vector2( 0.0824695, -0.227496 )
 scale = Vector2( 1.03474, 1.03622 )
 texture = ExtResource( 9 )
@@ -473,6 +514,7 @@ align = 1
 valign = 1
 
 [node name="CatBackground" type="Sprite" parent="Tv"]
+visible = false
 texture = ExtResource( 1 )
 
 [node name="Cat" type="Sprite" parent="Tv/CatBackground"]
@@ -529,5 +571,8 @@ custom_fonts/font = SubResource( 9 )
 text = "$$intro continue"
 align = 1
 valign = 1
+
+[node name="Voices" type="AudioStreamPlayer" parent="."]
+bus = "Voices"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
