@@ -10,9 +10,8 @@
 [ext_resource path="res://Assets/Sprites/female_dni.png" type="Texture" id=8]
 [ext_resource path="res://Interactuables/GrayFilter.tres" type="Material" id=9]
 
-
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.596078, 0.596078, 0.596078, 1 )
+bg_color = Color( 0.843137, 0.843137, 0.843137, 1 )
 corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
@@ -38,16 +37,17 @@ expand = true
 
 [node name="Backpanel" type="Panel" parent="."]
 margin_left = 94.0
-margin_top = 52.0
+margin_top = 27.0
 margin_right = 944.0
-margin_bottom = 523.0
+margin_bottom = 571.0
+rect_pivot_offset = Vector2( 135, 253 )
 custom_styles/panel = SubResource( 4 )
 
 [node name="Title" type="Label" parent="."]
 margin_left = 269.0
-margin_top = 63.0
+margin_top = 36.0
 margin_right = 769.0
-margin_bottom = 148.0
+margin_bottom = 121.0
 rect_pivot_offset = Vector2( -173, 85 )
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -58,55 +58,86 @@ valign = 1
 
 [node name="Title2" type="Label" parent="."]
 margin_left = 126.0
-margin_top = 182.0
+margin_top = 141.0
 margin_right = 826.0
-margin_bottom = 332.0
+margin_bottom = 195.0
 size_flags_horizontal = 7
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "$$guide 1"
 
+[node name="Title3" type="Label" parent="."]
+margin_left = 127.0
+margin_top = 224.0
+margin_right = 827.0
+margin_bottom = 278.0
+size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "$$guide 2"
+
+[node name="Title4" type="Label" parent="."]
+margin_left = 127.0
+margin_top = 392.0
+margin_right = 905.0
+margin_bottom = 502.0
+size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "$$guide 4"
+autowrap = true
+
+[node name="Title5" type="Label" parent="."]
+margin_left = 127.0
+margin_top = 312.0
+margin_right = 827.0
+margin_bottom = 366.0
+size_flags_horizontal = 7
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "$$guide 3"
+
 [node name="Back" type="Button" parent="."]
 margin_left = 436.0
-margin_top = 449.0
+margin_top = 512.0
 margin_right = 588.0
-margin_bottom = 489.0
+margin_bottom = 552.0
 theme = ExtResource( 3 )
 text = "$$back to menu"
 
 [node name="PassR" type="Sprite" parent="."]
-position = Vector2( 863, 300 )
-scale = Vector2( 0.16235, 0.16235 )
+position = Vector2( 859.813, 252.479 )
+scale = Vector2( 0.136952, 0.137481 )
 texture = ExtResource( 4 )
 
 [node name="FemaleDni" type="Sprite" parent="."]
-position = Vector2( 882, 184 )
+position = Vector2( 882, 143 )
 texture = ExtResource( 8 )
 
 [node name="Money" type="Sprite" parent="."]
-position = Vector2( 882, 219.75 )
+position = Vector2( 882, 178.75 )
 scale = Vector2( 1.38462, 1.34 )
 texture = ExtResource( 5 )
 
 [node name="Cif" type="Sprite" parent="."]
-position = Vector2( 839, 198 )
+position = Vector2( 839, 157 )
 scale = Vector2( 0.764706, 0.764706 )
 texture = ExtResource( 7 )
 
 [node name="FemaleDni2" type="Sprite" parent="."]
 material = ExtResource( 9 )
-position = Vector2( 892, 385.235 )
+position = Vector2( 884, 320.235 )
 texture = ExtResource( 8 )
 
 [node name="Money2" type="Sprite" parent="."]
 material = ExtResource( 9 )
-position = Vector2( 892, 420.985 )
+position = Vector2( 884, 355.985 )
 scale = Vector2( 1.38462, 1.34 )
 texture = ExtResource( 5 )
 
 [node name="Cif2" type="Sprite" parent="."]
 material = ExtResource( 9 )
-position = Vector2( 849, 399.235 )
+position = Vector2( 841, 334.235 )
 scale = Vector2( 0.764706, 0.764706 )
 texture = ExtResource( 7 )
 

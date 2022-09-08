@@ -17,15 +17,10 @@ $$end game,Finish,Terminar
 $$easy,Easy,Fácil
 $$medium,Medium,Medio
 $$hard,Hard,Difícil
-$$guide 1,"- Press the items to interact with them
-
-- Press the arrows to move between rooms
-
-- Press the items on the shelf to place them","- Presione los objetos para interactuar con ellos
-
-- Presione las flechas para moverse de habitación
-
-- Presione los items del estante para colocarlos"
+$$guide 1,- Press the items to interact with them,- Presione los objetos para interactuar con ellos
+$$guide 2,- Press the arrows to move between rooms,- Presione las flechas para moverse de habitación
+$$guide 3,- Press the items on the shelf to place them,- Presione los objetos del estante para colocarlos
+$$guide 4,- We recommend you read the section - Prevention Guide - to know what is necessary to do in the event of a flood,- Le recomendamos leer la sección - Guía de Prevención - para saber que es necesario hacer ante una inundación
 $$back,Back,Volver al menú
 $$english,English,Inglés
 $$spanish,Spanish,Español
@@ -42,15 +37,15 @@ FUERTES LLUVIAS"
 $$mistake energy,You didn’t turn off the power,No cortaste la luz
 $$mistake important items,You didn’t collect all the important items,No agarraste todos los objetos importantes
 $$mistake toxic items,You didn’t collect all the toxic items,No agarraste todos los objetos tóxicos
-$$instructions,Instructions,Instrucciones
-$$game instructions,Game Instructions,Instrucciones de juego
-$$instruction 1,- Find the toxic items,- Busca los elementos tóxicos
-$$instruction 2,- Make sure to turn off the house's power,- Asegúrate de cortar la energia de la casa
+$$instructions,Prevention guide,Guía de Prevención
+$$game instructions,Prevention guide,Guía de Prevención
+$$instruction 1,- Find the toxic items as they can contaminate the water,- Busca los elementos tóxicos ya que pueden contaminar el agua
+$$instruction 2,- Make sure to turn off the house's power as you could be electrocuted,- Asegúrate de cortar la energia de la casa ya que podrías electrocutarte
 $$instruction 3,- Grab your first aid kit,- Busca tu botiquín de primeros auxilios
-$$instruction 4,- Take care of your documents,- Busca tus documentos
-$$instruction 5,- Find your flashlight,- Encuentra tu linterna
-$$instruction 6,- Pick up your money,- Junta tu dinero
-$$instruction 7,- Stay away from the lower levels,- Aléjate de los niveles inferiores
+$$instruction 4,- Take care of your documents and money since you will need them after the flood,- Busca tus documentos y dinero ya que los necesitaras luego de la inundación
+$$instruction 5,- Find your flashlight as it will allow you to see in the dark,- Encuentra tu linterna ya que te permitirá ver en la oscuridad
+$$instruction 6,- Look for the radio because it is important to stay informed,- Busca la radio porque es importante mantenerse informado
+$$instruction 7,- Stay away from the lower levels as the water will come there,- Aléjate de los niveles inferiores ya que allí llegará el agua
 $$protocol,Handbook with protocols:,Manual con protocolo:
 $$play intro,Replay intro,Reproducir introducción
 $$outline,Outline items,Remarcar objetos
