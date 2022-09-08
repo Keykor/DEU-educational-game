@@ -14,6 +14,9 @@ var languages = {
 	"$$spanish": "es_AR"
 }
 
+var lastLanguageButton = null
+var lastDifficultyButton = null
+
 func _ready():
 	for key in difficulties:
 		difficulties[difficulties[key]] = key
@@ -30,51 +33,32 @@ func set_difficulties():
 		return
 	var controller = get_tree().get_current_scene()
 	self.connect("change_difficulty", controller, "_on_change_difficulty")
-	var time = controller.game_time
-	$Panel/Difficulty/DifficultyMenuButton.text = self.difficulties[time]
-	$Panel/Difficulty/DifficultyMenuButton.get_popup().add_item("$$easy")
-	$Panel/Difficulty/DifficultyMenuButton.get_popup().add_item("$$medium")
-	$Panel/Difficulty/DifficultyMenuButton.get_popup().add_item("$$hard")
-	$Panel/Difficulty/DifficultyMenuButton.get_popup().connect("id_pressed", self, "_on_difficulty_pressed")
+	$Panel/Difficulty/HBoxContainer/easy.connect("pressed", self, "_on_difficulty_pressed", [$Panel/Difficulty/HBoxContainer/easy])
+	$Panel/Difficulty/HBoxContainer/medium.connect("pressed", self, "_on_difficulty_pressed", [$Panel/Difficulty/HBoxContainer/medium])
+	$Panel/Difficulty/HBoxContainer/hard.connect("pressed", self, "_on_difficulty_pressed", [$Panel/Difficulty/HBoxContainer/hard])
 
-func _on_difficulty_pressed(id):
-	var item_name = $Panel/Difficulty/DifficultyMenuButton.get_popup().get_item_text(id)
-	var difficulty = self.difficulties[item_name]
-	$Panel/Difficulty/DifficultyMenuButton.text = item_name
+	lastDifficultyButton = $Panel/Difficulty/HBoxContainer/easy
+	lastDifficultyButton.disabled = true
+
+func _on_difficulty_pressed(button):
+	if (lastDifficultyButton):
+		lastDifficultyButton.disabled = false
+	var difficulty = self.difficulties[button.text]
+	button.disabled = true
 	emit_signal("change_difficulty", difficulty)
+	lastDifficultyButton = button
 
 func set_languages():
-	var controller = get_tree().get_current_scene()
-	TranslationServer.set_locale(self.languages[controller.language])
-	$Panel2/Language/LanguageMenuButton.text = controller.language
-	$Panel2/Language/LanguageMenuButton.get_popup().add_item("$$spanish")
-	$Panel2/Language/LanguageMenuButton.get_popup().add_item("$$english")
-	$Panel2/Language/LanguageMenuButton.get_popup().connect("id_pressed", self, "_on_language_pressed")
-
-func _on_language_pressed(id):
-	var language = $Panel2/Language/LanguageMenuButton.get_popup().get_item_text(id)
-	$Panel2/Language/LanguageMenuButton.text = language
-	TranslationServer.set_locale(self.languages[language])
-	var controller = get_tree().get_current_scene()
-	controller._on_change_language(language)
+	$Panel2/Language/HBoxContainer/spa.connect("pressed", self, "_on_language_button_pressed", [$Panel2/Language/HBoxContainer/spa])
+	$Panel2/Language/HBoxContainer/eng.connect("pressed", self, "_on_language_button_pressed", [$Panel2/Language/HBoxContainer/eng])
+	self.set_current_language()
 
 func set_current_language():
 	var controller = get_tree().get_current_scene()
-	$Panel2/Language/LanguageMenuButton.text = controller.language
-
-func _on_Settings_about_to_show():
-	self.set_current_language()
-	self.set_current_outline()
-	self.set_current_music_volume()
-	self.set_current_sounds_volume()
-	self.set_current_voices_volume()
-
-func _on_InGameSettings_about_to_show():
-	self.set_current_language()
-	self.set_current_outline()
-	self.set_current_music_volume()
-	self.set_current_sounds_volume()
-	self.set_current_voices_volume()
+	if controller.language == "es_AR":
+		_on_language_button_pressed($Panel2/Language/HBoxContainer/spa)
+	elif controller.language == "en_US":
+		_on_language_button_pressed($Panel2/Language/HBoxContainer/eng)
 	
 func set_current_outline():
 	var controller = get_tree().get_current_scene()
@@ -110,3 +94,27 @@ func set_current_sounds_volume():
 func set_current_voices_volume():
 	var controller = get_tree().get_current_scene()
 	$Panel6/VoicesHSlider.value = controller.voices_volume
+
+func _on_language_button_pressed(button):
+	if (lastLanguageButton):
+		lastLanguageButton.disabled = false
+	TranslationServer.set_locale(self.languages[button.text])
+	var controller = get_tree().get_current_scene()
+	controller._on_change_language(button.text)
+	button.disabled = true
+	lastLanguageButton = button
+
+func _on_Settings_about_to_show():
+	self.set_current_language()
+	self.set_current_outline()
+	self.set_current_music_volume()
+	self.set_current_sounds_volume()
+	self.set_current_voices_volume()
+
+func disable_difficulty():
+	$Panel/Difficulty.visible = false
+	$Panel/cantdif.visible = true
+	
+func enable_difficulty():
+	$Panel/Difficulty.visible = true
+	$Panel/cantdif.visible = false

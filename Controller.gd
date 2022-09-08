@@ -2,7 +2,7 @@ extends Node2D
 
 onready var active_scene = $MainMenu
 var game_time = 144.0
-var language = "$$spanish"
+var language = "es_AR"
 var electric_switch = true
 var outline_items = false
 var activity_time = 5
@@ -181,12 +181,15 @@ func _on_Salir_pressed(scene_name):
 
 func _on_Back_pressed():
 	$SettingsPopup.hide()
+	$SettingsPopup.enable_difficulty()
 
 func _on_PauseSettings_pressed():
-	$InGameSettingsPopup.popup()
+	$SettingsPopup.disable_difficulty()
+	$SettingsPopup.popup()
 
 func _on_Close_pressed():
-	$InGameSettingsPopup.hide()
+	$SettingsPopup.hide()
+	$SettingsPopup.enable_difficulty()
 
 func _on_SecondFloorbtn_pressed():
 	_on_change_scene("GameSecondFloor")

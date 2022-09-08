@@ -3,6 +3,8 @@ extends Node2D
 signal change_scene(scene_name)
 
 func _ready():
+	if (OS.has_feature("HTML5")) :
+		$TextureRect/CenterContainer/VBoxContainer/ExitButton.hide()
 	pass 
 
 func _on_button_pressed(scene_name):

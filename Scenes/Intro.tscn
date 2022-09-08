@@ -14,18 +14,22 @@
 
 [sub_resource type="DynamicFont" id=10]
 size = 26
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 43
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=11]
-size = 24
+size = 26
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="Animation" id=3]
@@ -447,6 +451,7 @@ tracks/3/keys = {
 
 [sub_resource type="DynamicFont" id=9]
 size = 37
+use_filter = true
 font_data = ExtResource( 6 )
 
 [node name="Intro" type="Control"]
